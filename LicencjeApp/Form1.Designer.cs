@@ -63,6 +63,14 @@
             this.modulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pozycjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.UstawieniaToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.edycjaBazyDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WybierzBazeDanychToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.firmyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modułyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.licencjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pozycjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingNavigator)).BeginInit();
@@ -132,7 +140,9 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.firmyBindingNavigatorSaveItem});
+            this.firmyBindingNavigatorSaveItem,
+            this.UstawieniaToolStripDropDownButton,
+            this.WybierzBazeDanychToolStripDropDownButton});
             this.firmyBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.firmyBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.firmyBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -140,7 +150,7 @@
             this.firmyBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.firmyBindingNavigator.Name = "firmyBindingNavigator";
             this.firmyBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.firmyBindingNavigator.Size = new System.Drawing.Size(1126, 25);
+            this.firmyBindingNavigator.Size = new System.Drawing.Size(746, 25);
             this.firmyBindingNavigator.TabIndex = 0;
             this.firmyBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -253,7 +263,7 @@
             this.firmyDataGridView.DataSource = this.firmyBindingSource;
             this.firmyDataGridView.Location = new System.Drawing.Point(0, 28);
             this.firmyDataGridView.Name = "firmyDataGridView";
-            this.firmyDataGridView.Size = new System.Drawing.Size(506, 392);
+            this.firmyDataGridView.Size = new System.Drawing.Size(744, 392);
             this.firmyDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -319,11 +329,74 @@
             this.programBindingSource.DataMember = "Program";
             this.programBindingSource.DataSource = this.licencjeDataSet;
             // 
+            // UstawieniaToolStripDropDownButton
+            // 
+            this.UstawieniaToolStripDropDownButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.UstawieniaToolStripDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.UstawieniaToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.edycjaBazyDanychToolStripMenuItem});
+            this.UstawieniaToolStripDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("UstawieniaToolStripDropDownButton.Image")));
+            this.UstawieniaToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UstawieniaToolStripDropDownButton.Name = "UstawieniaToolStripDropDownButton";
+            this.UstawieniaToolStripDropDownButton.Size = new System.Drawing.Size(77, 22);
+            this.UstawieniaToolStripDropDownButton.Text = "Ustawienia";
+            // 
+            // edycjaBazyDanychToolStripMenuItem
+            // 
+            this.edycjaBazyDanychToolStripMenuItem.Name = "edycjaBazyDanychToolStripMenuItem";
+            this.edycjaBazyDanychToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.edycjaBazyDanychToolStripMenuItem.Text = "Edycja Bazy Danych";
+            // 
+            // WybierzBazeDanychToolStripDropDownButton
+            // 
+            this.WybierzBazeDanychToolStripDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.WybierzBazeDanychToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.firmyToolStripMenuItem,
+            this.programyToolStripMenuItem,
+            this.modułyToolStripMenuItem,
+            this.licencjeToolStripMenuItem,
+            this.pozycjeToolStripMenuItem});
+            this.WybierzBazeDanychToolStripDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("WybierzBazeDanychToolStripDropDownButton.Image")));
+            this.WybierzBazeDanychToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.WybierzBazeDanychToolStripDropDownButton.Name = "WybierzBazeDanychToolStripDropDownButton";
+            this.WybierzBazeDanychToolStripDropDownButton.Size = new System.Drawing.Size(131, 22);
+            this.WybierzBazeDanychToolStripDropDownButton.Text = "Wybierz bazę danych";
+            // 
+            // firmyToolStripMenuItem
+            // 
+            this.firmyToolStripMenuItem.Name = "firmyToolStripMenuItem";
+            this.firmyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.firmyToolStripMenuItem.Text = "Firmy";
+            // 
+            // programyToolStripMenuItem
+            // 
+            this.programyToolStripMenuItem.Name = "programyToolStripMenuItem";
+            this.programyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.programyToolStripMenuItem.Text = "Programy";
+            // 
+            // modułyToolStripMenuItem
+            // 
+            this.modułyToolStripMenuItem.Name = "modułyToolStripMenuItem";
+            this.modułyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modułyToolStripMenuItem.Text = "Moduły";
+            // 
+            // licencjeToolStripMenuItem
+            // 
+            this.licencjeToolStripMenuItem.Name = "licencjeToolStripMenuItem";
+            this.licencjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.licencjeToolStripMenuItem.Text = "Licencje";
+            // 
+            // pozycjeToolStripMenuItem
+            // 
+            this.pozycjeToolStripMenuItem.Name = "pozycjeToolStripMenuItem";
+            this.pozycjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pozycjeToolStripMenuItem.Text = "Pozycje";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 535);
+            this.ClientSize = new System.Drawing.Size(746, 535);
             this.Controls.Add(this.firmyDataGridView);
             this.Controls.Add(this.firmyBindingNavigator);
             this.Name = "Form1";
@@ -379,6 +452,14 @@
         private System.Windows.Forms.BindingSource pozycjaBindingSource;
         private LicencjeDataSetTableAdapters.ProgramTableAdapter programTableAdapter;
         private System.Windows.Forms.BindingSource programBindingSource;
+        private System.Windows.Forms.ToolStripDropDownButton UstawieniaToolStripDropDownButton;
+        private System.Windows.Forms.ToolStripMenuItem edycjaBazyDanychToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton WybierzBazeDanychToolStripDropDownButton;
+        private System.Windows.Forms.ToolStripMenuItem firmyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem programyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modułyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem licencjeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pozycjeToolStripMenuItem;
     }
 }
 
