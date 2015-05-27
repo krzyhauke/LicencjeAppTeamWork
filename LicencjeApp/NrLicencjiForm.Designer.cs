@@ -33,6 +33,7 @@
             this.PDFButton = new System.Windows.Forms.Button();
             this.FirmaLabel = new System.Windows.Forms.Label();
             this.ProgramyListBox = new System.Windows.Forms.ListBox();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licencjeDataSet = new LicencjeApp.LicencjeDataSet();
             this.LicencjeListBox = new System.Windows.Forms.ListBox();
             this.licencjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -41,8 +42,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.IDLabel = new System.Windows.Forms.Label();
             this.licencjaTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.LicencjaTableAdapter();
+            this.licencjeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AnulujButton
@@ -77,12 +82,20 @@
             // 
             // ProgramyListBox
             // 
+            this.ProgramyListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.licencjaBindingSource, "ID_PROGRAMU", true));
+            this.ProgramyListBox.DataSource = this.programBindingSource;
+            this.ProgramyListBox.DisplayMember = "Nazwa";
             this.ProgramyListBox.FormattingEnabled = true;
             this.ProgramyListBox.Location = new System.Drawing.Point(17, 57);
             this.ProgramyListBox.Name = "ProgramyListBox";
             this.ProgramyListBox.Size = new System.Drawing.Size(81, 160);
             this.ProgramyListBox.TabIndex = 3;
             this.ProgramyListBox.SelectedIndexChanged += new System.EventHandler(this.ProgramyListBox_SelectedIndexChanged_1);
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataMember = "Program";
+            this.programBindingSource.DataSource = this.licencjeDataSet;
             // 
             // licencjeDataSet
             // 
@@ -147,6 +160,15 @@
             // 
             this.licencjaTableAdapter.ClearBeforeFill = true;
             // 
+            // licencjeDataSetBindingSource
+            // 
+            this.licencjeDataSetBindingSource.DataSource = this.licencjeDataSet;
+            this.licencjeDataSetBindingSource.Position = 0;
+            // 
+            // programTableAdapter
+            // 
+            this.programTableAdapter.ClearBeforeFill = true;
+            // 
             // NrLicencjiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,8 +186,10 @@
             this.Name = "NrLicencjiForm";
             this.Text = "NrLicencjiForm";
             this.Load += new System.EventHandler(this.NrLicencjiForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +209,8 @@
         private LicencjeDataSet licencjeDataSet;
         private System.Windows.Forms.BindingSource licencjaBindingSource;
         private LicencjeDataSetTableAdapters.LicencjaTableAdapter licencjaTableAdapter;
+        private System.Windows.Forms.BindingSource licencjeDataSetBindingSource;
+        private System.Windows.Forms.BindingSource programBindingSource;
+        private LicencjeDataSetTableAdapters.ProgramTableAdapter programTableAdapter;
     }
 }

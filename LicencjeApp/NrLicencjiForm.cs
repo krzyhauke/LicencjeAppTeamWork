@@ -39,12 +39,16 @@ namespace LicencjeApp
 
         public void NrLicencjiForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
+            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
+            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
+            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
 
-            string connstr = @"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
+           /* string connstr = @"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
             string query = "SELECT Nazwa" +
                            " FROM Program as tprog" +
                            " LEFT OUTER JOIN" +
-                           " Licencja AS Lic ON tprog.ID = lic.ID_PROGRAMU";
+                           " Licencja AS Lic ON tprog.ID = lic.ID_PROGRAMU WHERE tprog.ID = lic.ID_PROGRAMU ";
             SqlDataAdapter adapter = new SqlDataAdapter(query, connstr);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -53,7 +57,7 @@ namespace LicencjeApp
             ProgramyListBox.DataSource = pbs;
 
             ProgramyListBox.DisplayMember = "Nazwa";
-           // pbs.Filter = "SELECT * FROM Program INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU";
+          pbs.Filter = "SELECT * FROM Program INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU";*/
 
 
 
