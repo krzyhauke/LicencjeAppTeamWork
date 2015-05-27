@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 using System.Data.SqlClient;
 
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace LicencjeApp
 {
@@ -73,8 +76,44 @@ namespace LicencjeApp
             
         }
 
+        private void PDFButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog savefiledialog = new SaveFileDialog();
+            savefiledialog.DefaultExt = "pdf";
 
-        
+            if (savefiledialog.ShowDialog() == DialogResult.OK)
+            {
+
+                string FilePath = savefiledialog.FileName;
+
+                Document doc = new Document(iTextSharp.text.PageSize.LETTER, 20, 20, 45, 45);
+                PdfWriter wPDF = PdfWriter.GetInstance(doc, new FileStream(FilePath, FileMode.Create));
+
+                doc.Open();
+
+                Paragraph FirmaiTEXT = new Paragraph(FirmaLabel.Text, FontFactory.GetFont("Verdana", 20));
+                FirmaiTEXT.Alignment = Element.ALIGN_CENTER;
+
+
+                doc.Add(FirmaiTEXT);
+
+                Paragraph LicencjaiTEXT = new Paragraph(LicencjeListBox.Text, FontFactory.GetFont("Verdana", 12));
+                LicencjaiTEXT.Alignment = Element.ALIGN_JUSTIFIED;
+
+                doc.Add(LicencjaiTEXT);
+
+                Paragraph programiTEXT = new Paragraph(ProgramyListBox.Text, FontFactory.GetFont("Verdana", 10));
+                programiTEXT.Alignment = Element.ALIGN_RIGHT;
+
+                doc.Add(programiTEXT);
+
+                doc.Close();
+
+                MessageBox.Show("Plik Został Zapisany");
+            }
+
+
+        }
 
     }
 }
