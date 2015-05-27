@@ -40,12 +40,16 @@ namespace LicencjeApp
 
         public void NrLicencjiForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
-            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
             // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
             this.programTableAdapter.Fill(this.licencjeDataSet.Program);
+            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
+            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
+            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
+            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
 
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;User ID=sa;Password=dr5DR%ft6FT^");
+             idfirmyToolStripTextBox.Text = IDLabel.Text;
+
+            /*SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;User ID=sa;Password=dr5DR%ft6FT^");
             SqlCommand Licencjesqlcmd = new SqlCommand();
             SqlCommand Programysqlcmd = new SqlCommand();
 
@@ -55,7 +59,7 @@ namespace LicencjeApp
             Programysqlcmd.Connection = sqlcon;
             sqlcon.Open();
 
-            string IDFirmy = IDLabel.Text;
+           
 
 
             Licencjesqlcmd.CommandText = "SELECT NUMER_LICENCJI FROM Licencja WHERE ID_FIRMY = '" + IDFirmy + "';";
@@ -65,7 +69,26 @@ namespace LicencjeApp
 
             Licencjesqlcmd.ExecuteNonQuery();
             Programysqlcmd.ExecuteNonQuery();
-            sqlcon.Close();
+            sqlcon.Close();*/
         }
+
+        private void LicencjeListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void licencjeQueryToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.licencjaTableAdapter.LicencjeQuery(this.licencjeDataSet.Licencja, ((int)(System.Convert.ChangeType(idfirmyToolStripTextBox.Text, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
     }
 }
