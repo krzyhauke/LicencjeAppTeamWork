@@ -36,21 +36,31 @@ namespace LicencjeApp
             this.Close();
         }
 
-        private void ProgramyListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         public void NrLicencjiForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
-            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
+
+            string connstr = @"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
+            string query = "SELECT Nazwa" +
+                           " FROM Program as tprog" +
+                           " LEFT OUTER JOIN" +
+                           " Licencja AS Lic ON tprog.ID = lic.ID_PROGRAMU";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connstr);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            BindingSource pbs = new BindingSource();
+            pbs.DataSource = table;
+            ProgramyListBox.DataSource = pbs;
+
+            ProgramyListBox.DisplayMember = "Nazwa";
+           // pbs.Filter = "SELECT * FROM Program INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU";
+
+
+
             // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
             this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
             // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
             this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
-            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
             // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
             this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
             // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
@@ -71,10 +81,7 @@ namespace LicencjeApp
             licencjaBindingSource.Filter = "ID_FIRMY =" + IDLabel.Text;
         }
 
-        private void programBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private void PDFButton_Click(object sender, EventArgs e)
         {
@@ -112,6 +119,14 @@ namespace LicencjeApp
                 MessageBox.Show("Plik Został Zapisany");
             }
 
+
+        }
+
+      
+
+       
+        private void ProgramyListBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
 
         }
 
