@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EdycjaBazDanychForm));
             this.EdycjaBazyTabControl = new System.Windows.Forms.TabControl();
             this.ProgramyTabPage = new System.Windows.Forms.TabPage();
             this.DodajFirmeButton = new System.Windows.Forms.Button();
@@ -45,17 +47,47 @@
             this.NazwaFirmyLabel = new System.Windows.Forms.Label();
             this.ProgramTabPage = new System.Windows.Forms.TabPage();
             this.NazwaProgramyTextBox = new System.Windows.Forms.TextBox();
-            this.NazwaProgramy = new System.Windows.Forms.Label();
+            this.NazwaProgramuLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.ModulyTabPage = new System.Windows.Forms.TabPage();
+            this.KodModulyTextBox = new System.Windows.Forms.TextBox();
+            this.KodModulyLabel = new System.Windows.Forms.Label();
+            this.NazwaModulyTextBox = new System.Windows.Forms.TextBox();
+            this.NazwaModulyLabel = new System.Windows.Forms.Label();
+            this.ProgramModulyLabel = new System.Windows.Forms.Label();
+            this.licencjeDataSet = new LicencjeApp.LicencjeDataSet();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
+            this.tableAdapterManager = new LicencjeApp.LicencjeDataSetTableAdapters.TableAdapterManager();
+            this.programBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.programBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.programComboBox = new System.Windows.Forms.ComboBox();
             this.EdycjaBazyTabControl.SuspendLayout();
             this.ProgramyTabPage.SuspendLayout();
             this.ProgramTabPage.SuspendLayout();
+            this.ModulyTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingNavigator)).BeginInit();
+            this.programBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // EdycjaBazyTabControl
             // 
             this.EdycjaBazyTabControl.Controls.Add(this.ProgramyTabPage);
             this.EdycjaBazyTabControl.Controls.Add(this.ProgramTabPage);
+            this.EdycjaBazyTabControl.Controls.Add(this.ModulyTabPage);
             this.EdycjaBazyTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EdycjaBazyTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.EdycjaBazyTabControl.Location = new System.Drawing.Point(0, 0);
@@ -210,7 +242,7 @@
             // 
             this.ProgramTabPage.Controls.Add(this.button1);
             this.ProgramTabPage.Controls.Add(this.NazwaProgramyTextBox);
-            this.ProgramTabPage.Controls.Add(this.NazwaProgramy);
+            this.ProgramTabPage.Controls.Add(this.NazwaProgramuLabel);
             this.ProgramTabPage.Location = new System.Drawing.Point(4, 25);
             this.ProgramTabPage.Name = "ProgramTabPage";
             this.ProgramTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -227,15 +259,15 @@
             this.NazwaProgramyTextBox.Size = new System.Drawing.Size(162, 24);
             this.NazwaProgramyTextBox.TabIndex = 3;
             // 
-            // NazwaProgramy
+            // NazwaProgramuLabel
             // 
-            this.NazwaProgramy.AutoSize = true;
-            this.NazwaProgramy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NazwaProgramy.Location = new System.Drawing.Point(6, 33);
-            this.NazwaProgramy.Name = "NazwaProgramy";
-            this.NazwaProgramy.Size = new System.Drawing.Size(124, 18);
-            this.NazwaProgramy.TabIndex = 2;
-            this.NazwaProgramy.Text = "Nazwa Programu";
+            this.NazwaProgramuLabel.AutoSize = true;
+            this.NazwaProgramuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NazwaProgramuLabel.Location = new System.Drawing.Point(6, 33);
+            this.NazwaProgramuLabel.Name = "NazwaProgramuLabel";
+            this.NazwaProgramuLabel.Size = new System.Drawing.Size(124, 18);
+            this.NazwaProgramuLabel.TabIndex = 2;
+            this.NazwaProgramuLabel.Text = "Nazwa Programu";
             // 
             // button1
             // 
@@ -247,11 +279,235 @@
             this.button1.Text = "Dodaj";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // ModulyTabPage
+            // 
+            this.ModulyTabPage.AutoScroll = true;
+            this.ModulyTabPage.Controls.Add(this.programComboBox);
+            this.ModulyTabPage.Controls.Add(this.ProgramModulyLabel);
+            this.ModulyTabPage.Controls.Add(this.KodModulyTextBox);
+            this.ModulyTabPage.Controls.Add(this.KodModulyLabel);
+            this.ModulyTabPage.Controls.Add(this.NazwaModulyTextBox);
+            this.ModulyTabPage.Controls.Add(this.NazwaModulyLabel);
+            this.ModulyTabPage.Location = new System.Drawing.Point(4, 25);
+            this.ModulyTabPage.Name = "ModulyTabPage";
+            this.ModulyTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ModulyTabPage.Size = new System.Drawing.Size(418, 361);
+            this.ModulyTabPage.TabIndex = 2;
+            this.ModulyTabPage.Text = "Moduły";
+            this.ModulyTabPage.UseVisualStyleBackColor = true;
+            // 
+            // KodModulyTextBox
+            // 
+            this.KodModulyTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.KodModulyTextBox.Location = new System.Drawing.Point(119, 57);
+            this.KodModulyTextBox.Name = "KodModulyTextBox";
+            this.KodModulyTextBox.Size = new System.Drawing.Size(162, 24);
+            this.KodModulyTextBox.TabIndex = 7;
+            // 
+            // KodModulyLabel
+            // 
+            this.KodModulyLabel.AutoSize = true;
+            this.KodModulyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.KodModulyLabel.Location = new System.Drawing.Point(6, 63);
+            this.KodModulyLabel.Name = "KodModulyLabel";
+            this.KodModulyLabel.Size = new System.Drawing.Size(41, 18);
+            this.KodModulyLabel.TabIndex = 6;
+            this.KodModulyLabel.Text = "KOD";
+            // 
+            // NazwaModulyTextBox
+            // 
+            this.NazwaModulyTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NazwaModulyTextBox.Location = new System.Drawing.Point(119, 27);
+            this.NazwaModulyTextBox.Name = "NazwaModulyTextBox";
+            this.NazwaModulyTextBox.Size = new System.Drawing.Size(162, 24);
+            this.NazwaModulyTextBox.TabIndex = 5;
+            // 
+            // NazwaModulyLabel
+            // 
+            this.NazwaModulyLabel.AutoSize = true;
+            this.NazwaModulyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NazwaModulyLabel.Location = new System.Drawing.Point(6, 33);
+            this.NazwaModulyLabel.Name = "NazwaModulyLabel";
+            this.NazwaModulyLabel.Size = new System.Drawing.Size(107, 18);
+            this.NazwaModulyLabel.TabIndex = 4;
+            this.NazwaModulyLabel.Text = "Nazwa Modułu";
+            // 
+            // ProgramModulyLabel
+            // 
+            this.ProgramModulyLabel.AutoSize = true;
+            this.ProgramModulyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ProgramModulyLabel.Location = new System.Drawing.Point(3, 95);
+            this.ProgramModulyLabel.Name = "ProgramModulyLabel";
+            this.ProgramModulyLabel.Size = new System.Drawing.Size(70, 18);
+            this.ProgramModulyLabel.TabIndex = 8;
+            this.ProgramModulyLabel.Text = "Program ";
+            // 
+            // licencjeDataSet
+            // 
+            this.licencjeDataSet.DataSetName = "LicencjeDataSet";
+            this.licencjeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataMember = "Program";
+            this.programBindingSource.DataSource = this.licencjeDataSet;
+            // 
+            // programTableAdapter
+            // 
+            this.programTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FirmyTableAdapter = null;
+            this.tableAdapterManager.LicencjaTableAdapter = null;
+            this.tableAdapterManager.ModulyTableAdapter = null;
+            this.tableAdapterManager.PozycjaTableAdapter = null;
+            this.tableAdapterManager.ProgramTableAdapter = this.programTableAdapter;
+            this.tableAdapterManager.UpdateOrder = LicencjeApp.LicencjeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // programBindingNavigator
+            // 
+            this.programBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.programBindingNavigator.BindingSource = this.programBindingSource;
+            this.programBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.programBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.programBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.programBindingNavigatorSaveItem});
+            this.programBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.programBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.programBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.programBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.programBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.programBindingNavigator.Name = "programBindingNavigator";
+            this.programBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.programBindingNavigator.Size = new System.Drawing.Size(426, 25);
+            this.programBindingNavigator.TabIndex = 1;
+            this.programBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // programBindingNavigatorSaveItem
+            // 
+            this.programBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.programBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("programBindingNavigatorSaveItem.Image")));
+            this.programBindingNavigatorSaveItem.Name = "programBindingNavigatorSaveItem";
+            this.programBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.programBindingNavigatorSaveItem.Text = "Save Data";
+            this.programBindingNavigatorSaveItem.Click += new System.EventHandler(this.programBindingNavigatorSaveItem_Click);
+            // 
+            // programComboBox
+            // 
+            this.programComboBox.DataSource = this.programBindingSource;
+            this.programComboBox.DisplayMember = "Nazwa";
+            this.programComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.programComboBox.FormattingEnabled = true;
+            this.programComboBox.Location = new System.Drawing.Point(119, 87);
+            this.programComboBox.Name = "programComboBox";
+            this.programComboBox.Size = new System.Drawing.Size(162, 26);
+            this.programComboBox.TabIndex = 8;
+            this.programComboBox.ValueMember = "ID";
+            // 
             // EdycjaBazDanychForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 390);
+            this.Controls.Add(this.programBindingNavigator);
             this.Controls.Add(this.EdycjaBazyTabControl);
             this.Name = "EdycjaBazDanychForm";
             this.Text = "Dodaj dane do bazy danych";
@@ -261,7 +517,15 @@
             this.ProgramyTabPage.PerformLayout();
             this.ProgramTabPage.ResumeLayout(false);
             this.ProgramTabPage.PerformLayout();
+            this.ModulyTabPage.ResumeLayout(false);
+            this.ModulyTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingNavigator)).EndInit();
+            this.programBindingNavigator.ResumeLayout(false);
+            this.programBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -284,7 +548,31 @@
         private System.Windows.Forms.Label NipFirmyLabel;
         private System.Windows.Forms.Button DodajFirmeButton;
         private System.Windows.Forms.TextBox NazwaProgramyTextBox;
-        private System.Windows.Forms.Label NazwaProgramy;
+        private System.Windows.Forms.Label NazwaProgramuLabel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage ModulyTabPage;
+        private System.Windows.Forms.TextBox KodModulyTextBox;
+        private System.Windows.Forms.Label KodModulyLabel;
+        private System.Windows.Forms.TextBox NazwaModulyTextBox;
+        private System.Windows.Forms.Label NazwaModulyLabel;
+        private System.Windows.Forms.Label ProgramModulyLabel;
+        private LicencjeDataSet licencjeDataSet;
+        private System.Windows.Forms.BindingSource programBindingSource;
+        private LicencjeDataSetTableAdapters.ProgramTableAdapter programTableAdapter;
+        private LicencjeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator programBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton programBindingNavigatorSaveItem;
+        private System.Windows.Forms.ComboBox programComboBox;
     }
 }
