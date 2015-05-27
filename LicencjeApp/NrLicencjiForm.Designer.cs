@@ -43,14 +43,9 @@
             this.IDLabel = new System.Windows.Forms.Label();
             this.licencjaTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.LicencjaTableAdapter();
             this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
-            this.licencjeQueryToolStrip = new System.Windows.Forms.ToolStrip();
-            this.idfirmyToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.idfirmyToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.licencjeQueryToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).BeginInit();
-            this.licencjeQueryToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // AnulujButton
@@ -104,6 +99,8 @@
             // 
             // LicencjeListBox
             // 
+            this.LicencjeListBox.DataSource = this.licencjaBindingSource;
+            this.LicencjeListBox.DisplayMember = "NUMER_LICENCJI";
             this.LicencjeListBox.FormattingEnabled = true;
             this.LicencjeListBox.Location = new System.Drawing.Point(120, 57);
             this.LicencjeListBox.Name = "LicencjeListBox";
@@ -116,6 +113,7 @@
             this.licencjaBindingSource.DataMember = "Licencja";
             this.licencjaBindingSource.DataSource = this.licencjeDataSet;
             this.licencjaBindingSource.Filter = "";
+            this.licencjaBindingSource.CurrentChanged += new System.EventHandler(this.licencjaBindingSource_CurrentChanged);
             // 
             // label1
             // 
@@ -161,46 +159,11 @@
             // 
             this.programTableAdapter.ClearBeforeFill = true;
             // 
-            // licencjeQueryToolStrip
-            // 
-            this.licencjeQueryToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.idfirmyToolStripLabel,
-            this.idfirmyToolStripTextBox,
-            this.licencjeQueryToolStripButton});
-            this.licencjeQueryToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.licencjeQueryToolStrip.Name = "licencjeQueryToolStrip";
-            this.licencjeQueryToolStrip.Size = new System.Drawing.Size(289, 25);
-            this.licencjeQueryToolStrip.TabIndex = 9;
-            this.licencjeQueryToolStrip.Text = "licencjeQueryToolStrip";
-            this.licencjeQueryToolStrip.Visible = false;
-            // 
-            // idfirmyToolStripLabel
-            // 
-            this.idfirmyToolStripLabel.Name = "idfirmyToolStripLabel";
-            this.idfirmyToolStripLabel.Size = new System.Drawing.Size(48, 22);
-            this.idfirmyToolStripLabel.Text = "idfirmy:";
-            this.idfirmyToolStripLabel.Visible = false;
-            // 
-            // idfirmyToolStripTextBox
-            // 
-            this.idfirmyToolStripTextBox.Name = "idfirmyToolStripTextBox";
-            this.idfirmyToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            this.idfirmyToolStripTextBox.Visible = false;
-            // 
-            // licencjeQueryToolStripButton
-            // 
-            this.licencjeQueryToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.licencjeQueryToolStripButton.Name = "licencjeQueryToolStripButton";
-            this.licencjeQueryToolStripButton.Size = new System.Drawing.Size(86, 22);
-            this.licencjeQueryToolStripButton.Text = "LicencjeQuery";
-            this.licencjeQueryToolStripButton.Click += new System.EventHandler(this.licencjeQueryToolStripButton_Click);
-            // 
             // NrLicencjiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(289, 270);
-            this.Controls.Add(this.licencjeQueryToolStrip);
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -216,8 +179,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).EndInit();
-            this.licencjeQueryToolStrip.ResumeLayout(false);
-            this.licencjeQueryToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,9 +200,5 @@
         private LicencjeDataSetTableAdapters.LicencjaTableAdapter licencjaTableAdapter;
         private System.Windows.Forms.BindingSource programBindingSource;
         private LicencjeDataSetTableAdapters.ProgramTableAdapter programTableAdapter;
-        private System.Windows.Forms.ToolStrip licencjeQueryToolStrip;
-        private System.Windows.Forms.ToolStripLabel idfirmyToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox idfirmyToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton licencjeQueryToolStripButton;
     }
 }
