@@ -79,5 +79,12 @@ namespace LicencjeApp
             PasekBindingNavigator.BindingSource = licencjaBindingSource;
             WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Pozycje";
         }
+
+        private void TabelaDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+
+
+        }
     }
 }

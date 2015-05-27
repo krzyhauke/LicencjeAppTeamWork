@@ -51,11 +51,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.firmyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.TabelaDataGridView = new System.Windows.Forms.DataGridView();
-            this.licencjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.modulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pozycjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.UstawieniaToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.edycjaBazyDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WybierzBazeDanychToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
@@ -64,6 +59,11 @@
             this.modułyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.licencjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pozycjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TabelaDataGridView = new System.Windows.Forms.DataGridView();
+            this.licencjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pozycjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasekBindingNavigator)).BeginInit();
@@ -240,34 +240,6 @@
             this.firmyBindingNavigatorSaveItem.Text = "Save Data";
             this.firmyBindingNavigatorSaveItem.Click += new System.EventHandler(this.firmyBindingNavigatorSaveItem_Click);
             // 
-            // TabelaDataGridView
-            // 
-            this.TabelaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabelaDataGridView.Location = new System.Drawing.Point(0, 28);
-            this.TabelaDataGridView.Name = "TabelaDataGridView";
-            this.TabelaDataGridView.Size = new System.Drawing.Size(744, 392);
-            this.TabelaDataGridView.TabIndex = 1;
-            // 
-            // licencjaBindingSource
-            // 
-            this.licencjaBindingSource.DataMember = "Licencja";
-            this.licencjaBindingSource.DataSource = this.licencjeDataSet;
-            // 
-            // modulyBindingSource
-            // 
-            this.modulyBindingSource.DataMember = "Moduly";
-            this.modulyBindingSource.DataSource = this.licencjeDataSet;
-            // 
-            // pozycjaBindingSource
-            // 
-            this.pozycjaBindingSource.DataMember = "Pozycja";
-            this.pozycjaBindingSource.DataSource = this.licencjeDataSet;
-            // 
-            // programBindingSource
-            // 
-            this.programBindingSource.DataMember = "Program";
-            this.programBindingSource.DataSource = this.licencjeDataSet;
-            // 
             // UstawieniaToolStripDropDownButton
             // 
             this.UstawieniaToolStripDropDownButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -304,37 +276,66 @@
             // firmyToolStripMenuItem
             // 
             this.firmyToolStripMenuItem.Name = "firmyToolStripMenuItem";
-            this.firmyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.firmyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.firmyToolStripMenuItem.Text = "Firmy";
             this.firmyToolStripMenuItem.Click += new System.EventHandler(this.firmyToolStripMenuItem_Click);
             // 
             // programyToolStripMenuItem
             // 
             this.programyToolStripMenuItem.Name = "programyToolStripMenuItem";
-            this.programyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.programyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.programyToolStripMenuItem.Text = "Programy";
             this.programyToolStripMenuItem.Click += new System.EventHandler(this.programyToolStripMenuItem_Click);
             // 
             // modułyToolStripMenuItem
             // 
             this.modułyToolStripMenuItem.Name = "modułyToolStripMenuItem";
-            this.modułyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modułyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.modułyToolStripMenuItem.Text = "Moduły";
             this.modułyToolStripMenuItem.Click += new System.EventHandler(this.modułyToolStripMenuItem_Click);
             // 
             // licencjeToolStripMenuItem
             // 
             this.licencjeToolStripMenuItem.Name = "licencjeToolStripMenuItem";
-            this.licencjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.licencjeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.licencjeToolStripMenuItem.Text = "Licencje";
             this.licencjeToolStripMenuItem.Click += new System.EventHandler(this.licencjeToolStripMenuItem_Click);
             // 
             // pozycjeToolStripMenuItem
             // 
             this.pozycjeToolStripMenuItem.Name = "pozycjeToolStripMenuItem";
-            this.pozycjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pozycjeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.pozycjeToolStripMenuItem.Text = "Pozycje";
             this.pozycjeToolStripMenuItem.Click += new System.EventHandler(this.pozycjeToolStripMenuItem_Click);
+            // 
+            // TabelaDataGridView
+            // 
+            this.TabelaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabelaDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.TabelaDataGridView.Name = "TabelaDataGridView";
+            this.TabelaDataGridView.Size = new System.Drawing.Size(744, 392);
+            this.TabelaDataGridView.TabIndex = 1;
+            this.TabelaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaDataGridView_CellDoubleClick);
+            // 
+            // licencjaBindingSource
+            // 
+            this.licencjaBindingSource.DataMember = "Licencja";
+            this.licencjaBindingSource.DataSource = this.licencjeDataSet;
+            // 
+            // modulyBindingSource
+            // 
+            this.modulyBindingSource.DataMember = "Moduly";
+            this.modulyBindingSource.DataSource = this.licencjeDataSet;
+            // 
+            // pozycjaBindingSource
+            // 
+            this.pozycjaBindingSource.DataMember = "Pozycja";
+            this.pozycjaBindingSource.DataSource = this.licencjeDataSet;
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataMember = "Program";
+            this.programBindingSource.DataSource = this.licencjeDataSet;
             // 
             // Form1
             // 
