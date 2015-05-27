@@ -66,7 +66,7 @@ namespace LicencjeApp
         private void licencjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
-            TabelaDataGridView.DataSource = modulyBindingSource;
+            TabelaDataGridView.DataSource = licencjaBindingSource;
             PasekBindingNavigator.BindingSource = licencjaBindingSource;
             WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Licencje";
         }
