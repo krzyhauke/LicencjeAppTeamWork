@@ -33,10 +33,10 @@
             this.PDFButton = new System.Windows.Forms.Button();
             this.FirmaLabel = new System.Windows.Forms.Label();
             this.ProgramyListBox = new System.Windows.Forms.ListBox();
-            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.licencjeDataSet = new LicencjeApp.LicencjeDataSet();
-            this.LicencjeListBox = new System.Windows.Forms.ListBox();
             this.licencjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licencjeDataSet = new LicencjeApp.LicencjeDataSet();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LicencjeListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,9 +44,9 @@
             this.licencjaTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.LicencjaTableAdapter();
             this.licencjeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,18 +92,26 @@
             this.ProgramyListBox.TabIndex = 3;
             this.ProgramyListBox.SelectedIndexChanged += new System.EventHandler(this.ProgramyListBox_SelectedIndexChanged_1);
             // 
-            // programBindingSource
+            // licencjaBindingSource
             // 
-            this.programBindingSource.DataMember = "Program";
-            this.programBindingSource.DataSource = this.licencjeDataSet;
+            this.licencjaBindingSource.DataMember = "Licencja";
+            this.licencjaBindingSource.DataSource = this.licencjeDataSet;
+            this.licencjaBindingSource.Filter = "";
+            this.licencjaBindingSource.CurrentChanged += new System.EventHandler(this.licencjaBindingSource_CurrentChanged);
             // 
             // licencjeDataSet
             // 
             this.licencjeDataSet.DataSetName = "LicencjeDataSet";
             this.licencjeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataMember = "Program";
+            this.programBindingSource.DataSource = this.licencjeDataSet;
+            // 
             // LicencjeListBox
             // 
+            this.LicencjeListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.programBindingSource, "ID", true));
             this.LicencjeListBox.DataSource = this.licencjaBindingSource;
             this.LicencjeListBox.DisplayMember = "NUMER_LICENCJI";
             this.LicencjeListBox.FormattingEnabled = true;
@@ -112,13 +120,6 @@
             this.LicencjeListBox.Size = new System.Drawing.Size(149, 160);
             this.LicencjeListBox.TabIndex = 4;
             this.LicencjeListBox.SelectedIndexChanged += new System.EventHandler(this.LicencjeListBox_SelectedIndexChanged);
-            // 
-            // licencjaBindingSource
-            // 
-            this.licencjaBindingSource.DataMember = "Licencja";
-            this.licencjaBindingSource.DataSource = this.licencjeDataSet;
-            this.licencjaBindingSource.Filter = "";
-            this.licencjaBindingSource.CurrentChanged += new System.EventHandler(this.licencjaBindingSource_CurrentChanged);
             // 
             // label1
             // 
@@ -186,9 +187,9 @@
             this.Name = "NrLicencjiForm";
             this.Text = "NrLicencjiForm";
             this.Load += new System.EventHandler(this.NrLicencjiForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

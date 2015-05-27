@@ -102,18 +102,18 @@ namespace LicencjeApp
 
                 doc.Open();
 
-                Paragraph FirmaiTEXT = new Paragraph(FirmaLabel.Text, FontFactory.GetFont("Verdana", 20));
+                Paragraph FirmaiTEXT = new Paragraph(FirmaLabel.Text, FontFactory.GetFont("Verdana", 30));
                 FirmaiTEXT.Alignment = Element.ALIGN_CENTER;
 
 
                 doc.Add(FirmaiTEXT);
 
-                Paragraph LicencjaiTEXT = new Paragraph(LicencjeListBox.Text, FontFactory.GetFont("Verdana", 12));
+                Paragraph LicencjaiTEXT = new Paragraph("\n\n Licencja: " + LicencjeListBox.Text, FontFactory.GetFont("Verdana", 12));
                 LicencjaiTEXT.Alignment = Element.ALIGN_JUSTIFIED;
 
                 doc.Add(LicencjaiTEXT);
 
-                Paragraph programiTEXT = new Paragraph(ProgramyListBox.Text, FontFactory.GetFont("Verdana", 10));
+                Paragraph programiTEXT = new Paragraph("\n\n" + ProgramyListBox.Text, FontFactory.GetFont("Verdana", 10));
                 programiTEXT.Alignment = Element.ALIGN_RIGHT;
 
                 doc.Add(programiTEXT);
