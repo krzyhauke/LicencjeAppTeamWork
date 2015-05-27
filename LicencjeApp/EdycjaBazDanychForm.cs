@@ -13,12 +13,13 @@ namespace LicencjeApp
 {
     public partial class EdycjaBazDanychForm : Form
     {
-        public string connectionString = "Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
+        public string connectionString = "Data Source=78.10.88.200,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
+       
         public EdycjaBazDanychForm()
         {
             InitializeComponent();
         }
-
+        
         private void EdycjaBazDanychForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'licencjeDataSet.Moduly' table. You can move, or remove it, as needed.
@@ -40,7 +41,8 @@ namespace LicencjeApp
                 SprawdzPoloczenietoolStripStatusLabel.Text = "Nie połączono";
                 MessageBox.Show(ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            DataOddateTimePicker.Value = DateTime.Today;
+            DataDodateTimePicker.Value = DateTime.Today;
         }
 
         private void DodajFirmeButton_Click(object sender, EventArgs e)
@@ -57,12 +59,22 @@ namespace LicencjeApp
                 {
                     connection.Open();
                     cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Powiadomienie", "Dodano rekord do bazy danych", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            NazwaFirmyTextBox.Text = null;
+            NipFirmyTextBox.Text = null;
+            AdresFirmyTextBox.Text = null;
+            MiejscowoscFirmyTextBox.Text = null;
+            EmailFirmyTextBox.Text = null;
+            telefonTextBox.Text = null;
+
+            
 
         }
 
@@ -83,12 +95,16 @@ namespace LicencjeApp
                 {
                     connection.Open();
                     cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Dodano rekord do bazy danych", "Powiadomienie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            NazwaProgramyTextBox.Text = null;
         }
 
         private void DodajModulButton_Click(object sender, EventArgs e)
@@ -105,12 +121,18 @@ namespace LicencjeApp
                 {
                     connection.Open();
                     cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Dodano rekord do bazy danych", "Powiadomienie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            KodModulyTextBox.Text = null;
+            NazwaModulyTextBox.Text = null;
+            programComboBox.SelectedIndex = 0;
         }
 
         private void DodajLicencjeButton_Click(object sender, EventArgs e)
@@ -127,12 +149,22 @@ namespace LicencjeApp
                 {
                     connection.Open();
                     cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Dodano rekord do bazy danych", "Powiadomienie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            firmyLicencjeComboBox.SelectedIndex = 0;
+            NumerLicencjiTextBox.Text = null;
+            DataOddateTimePicker.Value = DateTime.Today;
+            DataDodateTimePicker.Value = DateTime.Today;
+            IloscLicencjinumericUpDown.Value = 1;
+            CenaLicencjinumericUpDown2.Value = 0;
+            programComboBox1.SelectedIndex = 0;
         }
 
         private void DodajPozycjeButton_Click(object sender, EventArgs e)
@@ -149,12 +181,17 @@ namespace LicencjeApp
                 {
                     connection.Open();
                     cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Dodano rekord do bazy danych", "Powiadomienie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            firmyPozycjeComboBox1.SelectedIndex = 0;
+            modulyComboBox.SelectedIndex = 0;
         }
 
     }

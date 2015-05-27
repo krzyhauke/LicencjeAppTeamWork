@@ -664,9 +664,9 @@
             this.ModulPozycjaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ModulPozycjaLabel.Location = new System.Drawing.Point(3, 63);
             this.ModulPozycjaLabel.Name = "ModulPozycjaLabel";
-            this.ModulPozycjaLabel.Size = new System.Drawing.Size(106, 18);
+            this.ModulPozycjaLabel.Size = new System.Drawing.Size(49, 18);
             this.ModulPozycjaLabel.TabIndex = 4;
-            this.ModulPozycjaLabel.Text = "Numer Licencji";
+            this.ModulPozycjaLabel.Text = "Moduł";
             // 
             // FirmaPozycjeLabel
             // 
