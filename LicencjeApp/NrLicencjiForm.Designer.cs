@@ -66,6 +66,7 @@
             this.PDFButton.TabIndex = 1;
             this.PDFButton.Text = "PDF";
             this.PDFButton.UseVisualStyleBackColor = true;
+            this.PDFButton.Click += new System.EventHandler(this.PDFButton_Click);
             // 
             // FirmaLabel
             // 
