@@ -46,29 +46,15 @@ namespace LicencjeApp
             this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
             // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
             this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
+            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
+            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
+            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
+            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
+            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
+            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
 
              
-            /*SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;User ID=sa;Password=dr5DR%ft6FT^");
-            SqlCommand Licencjesqlcmd = new SqlCommand();
-            SqlCommand Programysqlcmd = new SqlCommand();
-
             
-
-            Licencjesqlcmd.Connection = sqlcon;
-            Programysqlcmd.Connection = sqlcon;
-            sqlcon.Open();
-
-           
-
-
-            Licencjesqlcmd.CommandText = "SELECT NUMER_LICENCJI FROM Licencja WHERE ID_FIRMY = '" + IDFirmy + "';";
-            Programysqlcmd.CommandText = "SELECT Nazwa FROM Program WHERE LicencjeProgramow LIKE '%" + LicencjeListBox.Text + "%'";
-
-
-
-            Licencjesqlcmd.ExecuteNonQuery();
-            Programysqlcmd.ExecuteNonQuery();
-            sqlcon.Close();*/
         }
 
         private void LicencjeListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,6 +67,14 @@ namespace LicencjeApp
         {
             licencjaBindingSource.Filter = "ID_FIRMY =" + IDLabel.Text;
         }
+
+        private void programBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        
 
     }
 }

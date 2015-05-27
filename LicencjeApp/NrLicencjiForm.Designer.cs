@@ -91,6 +91,7 @@
             // 
             this.programBindingSource.DataMember = "Program";
             this.programBindingSource.DataSource = this.licencjeDataSet;
+            this.programBindingSource.CurrentChanged += new System.EventHandler(this.programBindingSource_CurrentChanged);
             // 
             // licencjeDataSet
             // 

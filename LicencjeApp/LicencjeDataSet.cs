@@ -5,3 +5,10 @@
     }
 }
 
+
+namespace LicencjeApp.LicencjeDataSetTableAdapters {
+    
+    
+    public partial class ProgramTableAdapter {
+    }
+}
