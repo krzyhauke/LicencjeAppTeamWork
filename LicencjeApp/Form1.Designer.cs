@@ -271,13 +271,12 @@
             // UstawieniaToolStripDropDownButton
             // 
             this.UstawieniaToolStripDropDownButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.UstawieniaToolStripDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.UstawieniaToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.edycjaBazyDanychToolStripMenuItem});
-            this.UstawieniaToolStripDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("UstawieniaToolStripDropDownButton.Image")));
+            this.UstawieniaToolStripDropDownButton.Image = global::LicencjeApp.Properties.Resources._7b9752c8_02b8_4311_b065_e194f3046e27;
             this.UstawieniaToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.UstawieniaToolStripDropDownButton.Name = "UstawieniaToolStripDropDownButton";
-            this.UstawieniaToolStripDropDownButton.Size = new System.Drawing.Size(77, 22);
+            this.UstawieniaToolStripDropDownButton.Size = new System.Drawing.Size(93, 22);
             this.UstawieniaToolStripDropDownButton.Text = "Ustawienia";
             // 
             // edycjaBazyDanychToolStripMenuItem
