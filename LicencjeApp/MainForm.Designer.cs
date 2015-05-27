@@ -50,6 +50,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.firmyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.UstawieniaToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.edycjaBazyDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,6 +133,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.RefreshStripButton1,
             this.firmyBindingNavigatorSaveItem,
             this.UstawieniaToolStripDropDownButton,
             this.WybierzBazeDanychToolStripDropDownButton});
@@ -231,13 +233,23 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // RefreshStripButton1
+            // 
+            this.RefreshStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RefreshStripButton1.Image = global::LicencjeApp.Properties.Resources.Refresh_icon;
+            this.RefreshStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshStripButton1.Name = "RefreshStripButton1";
+            this.RefreshStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.RefreshStripButton1.Text = "Odśwież ";
+            this.RefreshStripButton1.Click += new System.EventHandler(this.RefreshStripButton1_Click);
+            // 
             // firmyBindingNavigatorSaveItem
             // 
             this.firmyBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.firmyBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("firmyBindingNavigatorSaveItem.Image")));
             this.firmyBindingNavigatorSaveItem.Name = "firmyBindingNavigatorSaveItem";
             this.firmyBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.firmyBindingNavigatorSaveItem.Text = "Save Data";
+            this.firmyBindingNavigatorSaveItem.Text = "Zapisz";
             this.firmyBindingNavigatorSaveItem.Click += new System.EventHandler(this.firmyBindingNavigatorSaveItem_Click);
             // 
             // UstawieniaToolStripDropDownButton
@@ -399,6 +411,7 @@
         private System.Windows.Forms.ToolStripMenuItem modułyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem licencjeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pozycjeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton RefreshStripButton1;
     }
 }
 
