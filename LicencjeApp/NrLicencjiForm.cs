@@ -40,6 +40,10 @@ namespace LicencjeApp
 
         public void NrLicencjiForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
+            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
+            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
+            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
             SqlConnection sqlcon = new SqlConnection(@"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;User ID=sa;Password=dr5DR%ft6FT^");
             SqlCommand Licencjesqlcmd = new SqlCommand();
             SqlCommand Programysqlcmd = new SqlCommand();

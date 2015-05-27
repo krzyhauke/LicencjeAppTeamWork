@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.AnulujButton = new System.Windows.Forms.Button();
             this.PDFButton = new System.Windows.Forms.Button();
             this.FirmaLabel = new System.Windows.Forms.Label();
@@ -37,6 +38,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.IDLabel = new System.Windows.Forms.Label();
+            this.licencjeDataSet = new LicencjeApp.LicencjeDataSet();
+            this.licencjeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
+            this.licencjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licencjaTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.LicencjaTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AnulujButton
@@ -70,6 +81,8 @@
             // 
             // ProgramyListBox
             // 
+            this.ProgramyListBox.DataSource = this.programBindingSource;
+            this.ProgramyListBox.DisplayMember = "Nazwa";
             this.ProgramyListBox.FormattingEnabled = true;
             this.ProgramyListBox.Location = new System.Drawing.Point(17, 57);
             this.ProgramyListBox.Name = "ProgramyListBox";
@@ -78,6 +91,8 @@
             // 
             // LicencjeListBox
             // 
+            this.LicencjeListBox.DataSource = this.licencjaBindingSource;
+            this.LicencjeListBox.DisplayMember = "NUMER_LICENCJI";
             this.LicencjeListBox.FormattingEnabled = true;
             this.LicencjeListBox.Location = new System.Drawing.Point(120, 57);
             this.LicencjeListBox.Name = "LicencjeListBox";
@@ -120,6 +135,34 @@
             this.IDLabel.TabIndex = 8;
             this.IDLabel.Text = "zero";
             // 
+            // licencjeDataSet
+            // 
+            this.licencjeDataSet.DataSetName = "LicencjeDataSet";
+            this.licencjeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // licencjeDataSetBindingSource
+            // 
+            this.licencjeDataSetBindingSource.DataSource = this.licencjeDataSet;
+            this.licencjeDataSetBindingSource.Position = 0;
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataMember = "Program";
+            this.programBindingSource.DataSource = this.licencjeDataSet;
+            // 
+            // programTableAdapter
+            // 
+            this.programTableAdapter.ClearBeforeFill = true;
+            // 
+            // licencjaBindingSource
+            // 
+            this.licencjaBindingSource.DataMember = "Licencja";
+            this.licencjaBindingSource.DataSource = this.licencjeDataSet;
+            // 
+            // licencjaTableAdapter
+            // 
+            this.licencjaTableAdapter.ClearBeforeFill = true;
+            // 
             // NrLicencjiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +180,10 @@
             this.Name = "NrLicencjiForm";
             this.Text = "NrLicencjiForm";
             this.Load += new System.EventHandler(this.NrLicencjiForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +200,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label IDLabel;
+        private System.Windows.Forms.BindingSource licencjeDataSetBindingSource;
+        private LicencjeDataSet licencjeDataSet;
+        private System.Windows.Forms.BindingSource programBindingSource;
+        private LicencjeDataSetTableAdapters.ProgramTableAdapter programTableAdapter;
+        private System.Windows.Forms.BindingSource licencjaBindingSource;
+        private LicencjeDataSetTableAdapters.LicencjaTableAdapter licencjaTableAdapter;
     }
 }
