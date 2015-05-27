@@ -39,7 +39,6 @@
             this.pozycjaTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.PozycjaTableAdapter();
             this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
             this.PasekBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -118,7 +117,7 @@
             // 
             // PasekBindingNavigator
             // 
-            this.PasekBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.PasekBindingNavigator.AddNewItem = null;
             this.PasekBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.PasekBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.PasekBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -131,7 +130,6 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.RefreshStripButton1,
             this.firmyBindingNavigatorSaveItem,
@@ -147,15 +145,6 @@
             this.PasekBindingNavigator.Size = new System.Drawing.Size(746, 25);
             this.PasekBindingNavigator.TabIndex = 0;
             this.PasekBindingNavigator.Text = "Witam Serdecznie";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
@@ -382,7 +371,6 @@
         private LicencjeDataSetTableAdapters.FirmyTableAdapter firmyTableAdapter;
         private LicencjeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator PasekBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
