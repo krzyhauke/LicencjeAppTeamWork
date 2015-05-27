@@ -63,7 +63,6 @@
             this.modulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pozycjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingNavigator)).BeginInit();
@@ -320,21 +319,11 @@
             this.programBindingSource.DataMember = "Program";
             this.programBindingSource.DataSource = this.licencjeDataSet;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(858, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "PornTest";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 535);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.firmyDataGridView);
             this.Controls.Add(this.firmyBindingNavigator);
             this.Name = "Form1";
@@ -390,7 +379,6 @@
         private System.Windows.Forms.BindingSource pozycjaBindingSource;
         private LicencjeDataSetTableAdapters.ProgramTableAdapter programTableAdapter;
         private System.Windows.Forms.BindingSource programBindingSource;
-        private System.Windows.Forms.Label label1;
     }
 }
 
