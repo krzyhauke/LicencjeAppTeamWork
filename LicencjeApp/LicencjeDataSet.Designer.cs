@@ -1147,8 +1147,6 @@ namespace LicencjeApp {
             
             private global::System.Data.DataColumn columnNazwa;
             
-            private global::System.Data.DataColumn columnwersja;
-            
             private global::System.Data.DataColumn columnID_PROGRAMU;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1210,14 +1208,6 @@ namespace LicencjeApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn wersjaColumn {
-                get {
-                    return this.columnwersja;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn ID_PROGRAMUColumn {
                 get {
                     return this.columnID_PROGRAMU;
@@ -1261,13 +1251,12 @@ namespace LicencjeApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ModulyRow AddModulyRow(string KOD, string Nazwa, string wersja, string ID_PROGRAMU) {
+            public ModulyRow AddModulyRow(string KOD, string Nazwa, string ID_PROGRAMU) {
                 ModulyRow rowModulyRow = ((ModulyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         KOD,
                         Nazwa,
-                        wersja,
                         ID_PROGRAMU};
                 rowModulyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowModulyRow);
@@ -1301,7 +1290,6 @@ namespace LicencjeApp {
                 this.columnID = base.Columns["ID"];
                 this.columnKOD = base.Columns["KOD"];
                 this.columnNazwa = base.Columns["Nazwa"];
-                this.columnwersja = base.Columns["wersja"];
                 this.columnID_PROGRAMU = base.Columns["ID_PROGRAMU"];
             }
             
@@ -1314,8 +1302,6 @@ namespace LicencjeApp {
                 base.Columns.Add(this.columnKOD);
                 this.columnNazwa = new global::System.Data.DataColumn("Nazwa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNazwa);
-                this.columnwersja = new global::System.Data.DataColumn("wersja", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnwersja);
                 this.columnID_PROGRAMU = new global::System.Data.DataColumn("ID_PROGRAMU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_PROGRAMU);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1330,7 +1316,6 @@ namespace LicencjeApp {
                 this.columnKOD.MaxLength = 30;
                 this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 30;
-                this.columnwersja.MaxLength = 2147483647;
                 this.columnID_PROGRAMU.MaxLength = 30;
             }
             
@@ -2336,22 +2321,6 @@ namespace LicencjeApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string wersja {
-                get {
-                    try {
-                        return ((string)(this[this.tableModuly.wersjaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'wersja\' in table \'Moduly\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableModuly.wersjaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ID_PROGRAMU {
                 get {
                     try {
@@ -2364,18 +2333,6 @@ namespace LicencjeApp {
                 set {
                     this[this.tableModuly.ID_PROGRAMUColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IswersjaNull() {
-                return this.IsNull(this.tableModuly.wersjaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetwersjaNull() {
-                this[this.tableModuly.wersjaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3668,14 +3625,13 @@ SELECT ID, ID_FIRMY, NUMER_LICENCJI, DATA_OD, DATA_DO, Ilosc, Cena, ID_PROGRAMU 
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("KOD", "KOD");
             tableMapping.ColumnMappings.Add("Nazwa", "Nazwa");
-            tableMapping.ColumnMappings.Add("wersja", "wersja");
             tableMapping.ColumnMappings.Add("ID_PROGRAMU", "ID_PROGRAMU");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Moduly] WHERE (([ID] = @Original_ID) AND ([KOD] = @Original_KO" +
-                "D) AND ([Nazwa] = @Original_Nazwa) AND ((@IsNull_ID_PROGRAMU = 1 AND [ID_PROGRAM" +
-                "U] IS NULL) OR ([ID_PROGRAMU] = @Original_ID_PROGRAMU)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Moduly] WHERE (([ID] = @Original_ID) AND ([KOD] = @Original_KOD) AND" +
+                " ([Nazwa] = @Original_Nazwa) AND ((@IsNull_ID_PROGRAMU = 1 AND [ID_PROGRAMU] IS " +
+                "NULL) OR ([ID_PROGRAMU] = @Original_ID_PROGRAMU)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KOD", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KOD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3684,22 +3640,20 @@ SELECT ID, ID_FIRMY, NUMER_LICENCJI, DATA_OD, DATA_DO, Ilosc, Cena, ID_PROGRAMU 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PROGRAMU", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PROGRAMU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Moduly] ([KOD], [Nazwa], [wersja], [ID_PROGRAMU]) VALUES (@KOD" +
-                ", @Nazwa, @wersja, @ID_PROGRAMU);\r\nSELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FR" +
-                "OM Moduly WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Moduly] ([KOD], [Nazwa], [ID_PROGRAMU]) VALUES (@KOD, @Nazwa, @ID_PR" +
+                "OGRAMU);\r\nSELECT ID, KOD, Nazwa, ID_PROGRAMU FROM Moduly WHERE (ID = SCOPE_IDENT" +
+                "ITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KOD", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KOD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wersja", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "wersja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PROGRAMU", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PROGRAMU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Moduly] SET [KOD] = @KOD, [Nazwa] = @Nazwa, [wersja] = @wersja, [ID_PROGRAMU] = @ID_PROGRAMU WHERE (([ID] = @Original_ID) AND ([KOD] = @Original_KOD) AND ([Nazwa] = @Original_Nazwa) AND ((@IsNull_ID_PROGRAMU = 1 AND [ID_PROGRAMU] IS NULL) OR ([ID_PROGRAMU] = @Original_ID_PROGRAMU)));
-SELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FROM Moduly WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Moduly] SET [KOD] = @KOD, [Nazwa] = @Nazwa, [ID_PROGRAMU] = @ID_PROGRAMU WHERE (([ID] = @Original_ID) AND ([KOD] = @Original_KOD) AND ([Nazwa] = @Original_Nazwa) AND ((@IsNull_ID_PROGRAMU = 1 AND [ID_PROGRAMU] IS NULL) OR ([ID_PROGRAMU] = @Original_ID_PROGRAMU)));
+SELECT ID, KOD, Nazwa, ID_PROGRAMU FROM Moduly WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KOD", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KOD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wersja", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "wersja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PROGRAMU", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PROGRAMU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KOD", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KOD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3722,7 +3676,7 @@ SELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FROM Moduly WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FROM dbo.Moduly";
+            this._commandCollection[0].CommandText = "SELECT ID, KOD, Nazwa, ID_PROGRAMU FROM Moduly";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3825,7 +3779,7 @@ SELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FROM Moduly WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string KOD, string Nazwa, string wersja, string ID_PROGRAMU) {
+        public virtual int Insert(string KOD, string Nazwa, string ID_PROGRAMU) {
             if ((KOD == null)) {
                 throw new global::System.ArgumentNullException("KOD");
             }
@@ -3838,17 +3792,11 @@ SELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FROM Moduly WHERE (ID = @ID)";
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nazwa));
             }
-            if ((wersja == null)) {
+            if ((ID_PROGRAMU == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(wersja));
-            }
-            if ((ID_PROGRAMU == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ID_PROGRAMU));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ID_PROGRAMU));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3870,7 +3818,7 @@ SELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FROM Moduly WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string KOD, string Nazwa, string wersja, string ID_PROGRAMU, int Original_ID, string Original_KOD, string Original_Nazwa, string Original_ID_PROGRAMU, int ID) {
+        public virtual int Update(string KOD, string Nazwa, string ID_PROGRAMU, int Original_ID, string Original_KOD, string Original_Nazwa, string Original_ID_PROGRAMU, int ID) {
             if ((KOD == null)) {
                 throw new global::System.ArgumentNullException("KOD");
             }
@@ -3883,40 +3831,34 @@ SELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FROM Moduly WHERE (ID = @ID)";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nazwa));
             }
-            if ((wersja == null)) {
+            if ((ID_PROGRAMU == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(wersja));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(ID_PROGRAMU));
             }
-            if ((ID_PROGRAMU == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ID_PROGRAMU));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
             if ((Original_KOD == null)) {
                 throw new global::System.ArgumentNullException("Original_KOD");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_KOD));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_KOD));
             }
             if ((Original_Nazwa == null)) {
                 throw new global::System.ArgumentNullException("Original_Nazwa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nazwa));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nazwa));
             }
             if ((Original_ID_PROGRAMU == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_ID_PROGRAMU));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_ID_PROGRAMU));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3937,8 +3879,8 @@ SELECT ID, KOD, Nazwa, wersja, ID_PROGRAMU FROM Moduly WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string KOD, string Nazwa, string wersja, string ID_PROGRAMU, int Original_ID, string Original_KOD, string Original_Nazwa, string Original_ID_PROGRAMU) {
-            return this.Update(KOD, Nazwa, wersja, ID_PROGRAMU, Original_ID, Original_KOD, Original_Nazwa, Original_ID_PROGRAMU, Original_ID);
+        public virtual int Update(string KOD, string Nazwa, string ID_PROGRAMU, int Original_ID, string Original_KOD, string Original_Nazwa, string Original_ID_PROGRAMU) {
+            return this.Update(KOD, Nazwa, ID_PROGRAMU, Original_ID, Original_KOD, Original_Nazwa, Original_ID_PROGRAMU, Original_ID);
         }
     }
     
