@@ -55,10 +55,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LicencjeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NrLicencjiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NrLicencjiForm.Designer.cs">
+      <DependentUpon>NrLicencjiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NrLicencjiForm.resx">
+      <DependentUpon>NrLicencjiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
