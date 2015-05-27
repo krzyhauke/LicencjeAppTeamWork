@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LicencjeApp
 {
@@ -30,7 +31,19 @@ namespace LicencjeApp
 
         private void DodajFirmeButton_Click(object sender, EventArgs e)
         {
+            string connectionString = "Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "INSERT INTO Firmy (NAZWA, NIP, ADRES, Miejscowosc, email, telefon) VALUES (" + NazwaFirmyTextBox.Text + "," + NipFirmyTextBox.Text + "," + AdresFirmyTextBox.Text+ "," +MiejscowoscFirmyTextBox.Text+ "," +EmailFirmyTextBox.Text + "," + telefonTextBox.Text +");";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = connection;
+
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
 
     }
