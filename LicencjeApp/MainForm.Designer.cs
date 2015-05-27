@@ -1,6 +1,6 @@
 ﻿namespace LicencjeApp
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.licencjeDataSet = new LicencjeApp.LicencjeDataSet();
             this.firmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firmyTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.FirmyTableAdapter();
@@ -256,6 +256,7 @@
             this.edycjaBazyDanychToolStripMenuItem.Name = "edycjaBazyDanychToolStripMenuItem";
             this.edycjaBazyDanychToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.edycjaBazyDanychToolStripMenuItem.Text = "Edycja Bazy Danych";
+            this.edycjaBazyDanychToolStripMenuItem.Click += new System.EventHandler(this.edycjaBazyDanychToolStripMenuItem_Click);
             // 
             // WybierzBazeDanychToolStripDropDownButton
             // 
@@ -310,9 +311,10 @@
             // TabelaDataGridView
             // 
             this.TabelaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabelaDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.TabelaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabelaDataGridView.Location = new System.Drawing.Point(0, 25);
             this.TabelaDataGridView.Name = "TabelaDataGridView";
-            this.TabelaDataGridView.Size = new System.Drawing.Size(744, 392);
+            this.TabelaDataGridView.Size = new System.Drawing.Size(746, 510);
             this.TabelaDataGridView.TabIndex = 1;
             this.TabelaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaDataGridView_CellDoubleClick);
             // 
@@ -336,14 +338,14 @@
             this.programBindingSource.DataMember = "Program";
             this.programBindingSource.DataSource = this.licencjeDataSet;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 535);
             this.Controls.Add(this.TabelaDataGridView);
             this.Controls.Add(this.PasekBindingNavigator);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();

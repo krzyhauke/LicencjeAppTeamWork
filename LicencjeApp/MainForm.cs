@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LicencjeApp
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -85,6 +85,12 @@ namespace LicencjeApp
             int row = e.RowIndex;
 
 
+        }
+
+        private void edycjaBazyDanychToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EdycjaBazDanychForm EdycjaBazDanychForm = new EdycjaBazDanychForm();
+            EdycjaBazDanychForm.Show();
         }
     }
 }
