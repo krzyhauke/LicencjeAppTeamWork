@@ -35,6 +35,8 @@
             this.LicencjeListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.IDLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AnulujButton
@@ -100,11 +102,31 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Licencje";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(202, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "ID:";
+            // 
+            // IDLabel
+            // 
+            this.IDLabel.AutoSize = true;
+            this.IDLabel.Location = new System.Drawing.Point(229, 9);
+            this.IDLabel.Name = "IDLabel";
+            this.IDLabel.Size = new System.Drawing.Size(27, 13);
+            this.IDLabel.TabIndex = 8;
+            this.IDLabel.Text = "zero";
+            // 
             // NrLicencjiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.IDLabel);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LicencjeListBox);
@@ -114,6 +136,7 @@
             this.Controls.Add(this.AnulujButton);
             this.Name = "NrLicencjiForm";
             this.Text = "NrLicencjiForm";
+            this.Load += new System.EventHandler(this.NrLicencjiForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +151,7 @@
         private System.Windows.Forms.ListBox LicencjeListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label IDLabel;
     }
 }
