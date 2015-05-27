@@ -59,35 +59,37 @@
             this.NazwaModulyTextBox = new System.Windows.Forms.TextBox();
             this.NazwaModulyLabel = new System.Windows.Forms.Label();
             this.LicencjeTabPage = new System.Windows.Forms.TabPage();
+            this.DodajLicencjeButton = new System.Windows.Forms.Button();
+            this.firmyLicencjeComboBox = new System.Windows.Forms.ComboBox();
+            this.firmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CenaLicencjinumericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.IloscLicencjinumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.programComboBox1 = new System.Windows.Forms.ComboBox();
+            this.programBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.CenaLicencjeLabel = new System.Windows.Forms.Label();
+            this.ProgramLicencjeLabel = new System.Windows.Forms.Label();
+            this.IloscLicencjeLabel = new System.Windows.Forms.Label();
+            this.DataDodateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.DataOddateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.DataOdLabel = new System.Windows.Forms.Label();
+            this.DataDoLabel = new System.Windows.Forms.Label();
             this.NumerLicencjiTextBox = new System.Windows.Forms.TextBox();
             this.NumerLicencjiLabel = new System.Windows.Forms.Label();
             this.NazwaFirmyLicencjeLabel = new System.Windows.Forms.Label();
-            this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
-            this.tableAdapterManager = new LicencjeApp.LicencjeDataSetTableAdapters.TableAdapterManager();
-            this.DataDoLabel = new System.Windows.Forms.Label();
-            this.DataOdLabel = new System.Windows.Forms.Label();
-            this.DataOddateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.DataDodateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.ProgramLicencjeLabel = new System.Windows.Forms.Label();
-            this.IloscLicencjeLabel = new System.Windows.Forms.Label();
-            this.CenaLicencjeLabel = new System.Windows.Forms.Label();
-            this.programBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.programComboBox1 = new System.Windows.Forms.ComboBox();
-            this.IloscLicencjinumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.CenaLicencjinumericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.PozycjetabPage = new System.Windows.Forms.TabPage();
-            this.firmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.firmyTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.FirmyTableAdapter();
-            this.firmyLicencjeComboBox = new System.Windows.Forms.ComboBox();
+            this.DodajPozycjeButton = new System.Windows.Forms.Button();
+            this.firmyPozycjeComboBox1 = new System.Windows.Forms.ComboBox();
+            this.firmyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.modulyComboBox = new System.Windows.Forms.ComboBox();
+            this.modulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ModulPozycjaLabel = new System.Windows.Forms.Label();
             this.FirmaPozycjeLabel = new System.Windows.Forms.Label();
-            this.modulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
+            this.tableAdapterManager = new LicencjeApp.LicencjeDataSetTableAdapters.TableAdapterManager();
+            this.firmyTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.FirmyTableAdapter();
             this.modulyTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ModulyTableAdapter();
-            this.modulyComboBox = new System.Windows.Forms.ComboBox();
-            this.firmyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.firmyPozycjeComboBox1 = new System.Windows.Forms.ComboBox();
-            this.DodajLicencjeButton = new System.Windows.Forms.Button();
-            this.DodajPozycjeButton = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.SprawdzPoloczenietoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.EdycjaBazyTabControl.SuspendLayout();
             this.ProgramyTabPage.SuspendLayout();
             this.ProgramTabPage.SuspendLayout();
@@ -95,13 +97,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             this.LicencjeTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IloscLicencjinumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CenaLicencjinumericUpDown2)).BeginInit();
-            this.PozycjetabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modulyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CenaLicencjinumericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IloscLicencjinumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource1)).BeginInit();
+            this.PozycjetabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modulyBindingSource)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // EdycjaBazyTabControl
@@ -116,7 +119,7 @@
             this.EdycjaBazyTabControl.Location = new System.Drawing.Point(0, 0);
             this.EdycjaBazyTabControl.Name = "EdycjaBazyTabControl";
             this.EdycjaBazyTabControl.SelectedIndex = 0;
-            this.EdycjaBazyTabControl.Size = new System.Drawing.Size(426, 390);
+            this.EdycjaBazyTabControl.Size = new System.Drawing.Size(426, 407);
             this.EdycjaBazyTabControl.TabIndex = 0;
             // 
             // ProgramyTabPage
@@ -137,7 +140,7 @@
             this.ProgramyTabPage.Location = new System.Drawing.Point(4, 25);
             this.ProgramyTabPage.Name = "ProgramyTabPage";
             this.ProgramyTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ProgramyTabPage.Size = new System.Drawing.Size(418, 361);
+            this.ProgramyTabPage.Size = new System.Drawing.Size(418, 378);
             this.ProgramyTabPage.TabIndex = 0;
             this.ProgramyTabPage.Text = "Firmy";
             this.ProgramyTabPage.UseVisualStyleBackColor = true;
@@ -269,7 +272,7 @@
             this.ProgramTabPage.Location = new System.Drawing.Point(4, 25);
             this.ProgramTabPage.Name = "ProgramTabPage";
             this.ProgramTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ProgramTabPage.Size = new System.Drawing.Size(418, 361);
+            this.ProgramTabPage.Size = new System.Drawing.Size(418, 378);
             this.ProgramTabPage.TabIndex = 1;
             this.ProgramTabPage.Text = "Programy";
             this.ProgramTabPage.UseVisualStyleBackColor = true;
@@ -283,6 +286,7 @@
             this.DodajProgramButton.TabIndex = 13;
             this.DodajProgramButton.Text = "Dodaj";
             this.DodajProgramButton.UseVisualStyleBackColor = true;
+            this.DodajProgramButton.Click += new System.EventHandler(this.DodajProgramButton_Click);
             // 
             // NazwaProgramyTextBox
             // 
@@ -315,7 +319,7 @@
             this.ModulyTabPage.Location = new System.Drawing.Point(4, 25);
             this.ModulyTabPage.Name = "ModulyTabPage";
             this.ModulyTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ModulyTabPage.Size = new System.Drawing.Size(418, 361);
+            this.ModulyTabPage.Size = new System.Drawing.Size(418, 378);
             this.ModulyTabPage.TabIndex = 2;
             this.ModulyTabPage.Text = "Moduły";
             this.ModulyTabPage.UseVisualStyleBackColor = true;
@@ -329,6 +333,7 @@
             this.DodajModulButton.TabIndex = 14;
             this.DodajModulButton.Text = "Dodaj";
             this.DodajModulButton.UseVisualStyleBackColor = true;
+            this.DodajModulButton.Click += new System.EventHandler(this.DodajModulButton_Click);
             // 
             // programComboBox
             // 
@@ -425,6 +430,144 @@
             this.LicencjeTabPage.Text = "Licencje";
             this.LicencjeTabPage.UseVisualStyleBackColor = true;
             // 
+            // DodajLicencjeButton
+            // 
+            this.DodajLicencjeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DodajLicencjeButton.Location = new System.Drawing.Point(327, 323);
+            this.DodajLicencjeButton.Name = "DodajLicencjeButton";
+            this.DodajLicencjeButton.Size = new System.Drawing.Size(83, 30);
+            this.DodajLicencjeButton.TabIndex = 14;
+            this.DodajLicencjeButton.Text = "Dodaj";
+            this.DodajLicencjeButton.UseVisualStyleBackColor = true;
+            // 
+            // firmyLicencjeComboBox
+            // 
+            this.firmyLicencjeComboBox.DataSource = this.firmyBindingSource;
+            this.firmyLicencjeComboBox.DisplayMember = "NAZWA";
+            this.firmyLicencjeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.firmyLicencjeComboBox.FormattingEnabled = true;
+            this.firmyLicencjeComboBox.Location = new System.Drawing.Point(118, 27);
+            this.firmyLicencjeComboBox.Name = "firmyLicencjeComboBox";
+            this.firmyLicencjeComboBox.Size = new System.Drawing.Size(200, 24);
+            this.firmyLicencjeComboBox.TabIndex = 13;
+            this.firmyLicencjeComboBox.ValueMember = "ID";
+            // 
+            // firmyBindingSource
+            // 
+            this.firmyBindingSource.DataMember = "Firmy";
+            this.firmyBindingSource.DataSource = this.licencjeDataSet;
+            // 
+            // CenaLicencjinumericUpDown2
+            // 
+            this.CenaLicencjinumericUpDown2.DecimalPlaces = 2;
+            this.CenaLicencjinumericUpDown2.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.CenaLicencjinumericUpDown2.Location = new System.Drawing.Point(118, 201);
+            this.CenaLicencjinumericUpDown2.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.CenaLicencjinumericUpDown2.Name = "CenaLicencjinumericUpDown2";
+            this.CenaLicencjinumericUpDown2.Size = new System.Drawing.Size(200, 22);
+            this.CenaLicencjinumericUpDown2.TabIndex = 12;
+            // 
+            // IloscLicencjinumericUpDown
+            // 
+            this.IloscLicencjinumericUpDown.Location = new System.Drawing.Point(118, 173);
+            this.IloscLicencjinumericUpDown.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.IloscLicencjinumericUpDown.Name = "IloscLicencjinumericUpDown";
+            this.IloscLicencjinumericUpDown.Size = new System.Drawing.Size(200, 22);
+            this.IloscLicencjinumericUpDown.TabIndex = 11;
+            // 
+            // programComboBox1
+            // 
+            this.programComboBox1.DataSource = this.programBindingSource1;
+            this.programComboBox1.DisplayMember = "Nazwa";
+            this.programComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.programComboBox1.FormattingEnabled = true;
+            this.programComboBox1.Location = new System.Drawing.Point(118, 143);
+            this.programComboBox1.Name = "programComboBox1";
+            this.programComboBox1.Size = new System.Drawing.Size(200, 24);
+            this.programComboBox1.TabIndex = 10;
+            this.programComboBox1.ValueMember = "ID";
+            // 
+            // programBindingSource1
+            // 
+            this.programBindingSource1.DataMember = "Program";
+            this.programBindingSource1.DataSource = this.licencjeDataSet;
+            // 
+            // CenaLicencjeLabel
+            // 
+            this.CenaLicencjeLabel.AutoSize = true;
+            this.CenaLicencjeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CenaLicencjeLabel.Location = new System.Drawing.Point(6, 205);
+            this.CenaLicencjeLabel.Name = "CenaLicencjeLabel";
+            this.CenaLicencjeLabel.Size = new System.Drawing.Size(43, 18);
+            this.CenaLicencjeLabel.TabIndex = 10;
+            this.CenaLicencjeLabel.Text = "Cena";
+            // 
+            // ProgramLicencjeLabel
+            // 
+            this.ProgramLicencjeLabel.AutoSize = true;
+            this.ProgramLicencjeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ProgramLicencjeLabel.Location = new System.Drawing.Point(6, 149);
+            this.ProgramLicencjeLabel.Name = "ProgramLicencjeLabel";
+            this.ProgramLicencjeLabel.Size = new System.Drawing.Size(66, 18);
+            this.ProgramLicencjeLabel.TabIndex = 9;
+            this.ProgramLicencjeLabel.Text = "Program";
+            // 
+            // IloscLicencjeLabel
+            // 
+            this.IloscLicencjeLabel.AutoSize = true;
+            this.IloscLicencjeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.IloscLicencjeLabel.Location = new System.Drawing.Point(6, 177);
+            this.IloscLicencjeLabel.Name = "IloscLicencjeLabel";
+            this.IloscLicencjeLabel.Size = new System.Drawing.Size(39, 18);
+            this.IloscLicencjeLabel.TabIndex = 8;
+            this.IloscLicencjeLabel.Text = "Ilość";
+            // 
+            // DataDodateTimePicker
+            // 
+            this.DataDodateTimePicker.Location = new System.Drawing.Point(118, 115);
+            this.DataDodateTimePicker.Name = "DataDodateTimePicker";
+            this.DataDodateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.DataDodateTimePicker.TabIndex = 7;
+            // 
+            // DataOddateTimePicker
+            // 
+            this.DataOddateTimePicker.Location = new System.Drawing.Point(118, 87);
+            this.DataOddateTimePicker.Name = "DataOddateTimePicker";
+            this.DataOddateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.DataOddateTimePicker.TabIndex = 6;
+            // 
+            // DataOdLabel
+            // 
+            this.DataOdLabel.AutoSize = true;
+            this.DataOdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DataOdLabel.Location = new System.Drawing.Point(6, 91);
+            this.DataOdLabel.Name = "DataOdLabel";
+            this.DataOdLabel.Size = new System.Drawing.Size(64, 18);
+            this.DataOdLabel.TabIndex = 5;
+            this.DataOdLabel.Text = "Data od:";
+            // 
+            // DataDoLabel
+            // 
+            this.DataDoLabel.AutoSize = true;
+            this.DataDoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DataDoLabel.Location = new System.Drawing.Point(6, 119);
+            this.DataDoLabel.Name = "DataDoLabel";
+            this.DataDoLabel.Size = new System.Drawing.Size(64, 18);
+            this.DataDoLabel.TabIndex = 4;
+            this.DataDoLabel.Text = "Data do:";
+            // 
             // NumerLicencjiTextBox
             // 
             this.NumerLicencjiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -453,131 +596,6 @@
             this.NazwaFirmyLicencjeLabel.TabIndex = 1;
             this.NazwaFirmyLicencjeLabel.Text = "Firma";
             // 
-            // programTableAdapter
-            // 
-            this.programTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.FirmyTableAdapter = null;
-            this.tableAdapterManager.LicencjaTableAdapter = null;
-            this.tableAdapterManager.ModulyTableAdapter = null;
-            this.tableAdapterManager.PozycjaTableAdapter = null;
-            this.tableAdapterManager.ProgramTableAdapter = this.programTableAdapter;
-            this.tableAdapterManager.UpdateOrder = LicencjeApp.LicencjeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // DataDoLabel
-            // 
-            this.DataDoLabel.AutoSize = true;
-            this.DataDoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DataDoLabel.Location = new System.Drawing.Point(6, 119);
-            this.DataDoLabel.Name = "DataDoLabel";
-            this.DataDoLabel.Size = new System.Drawing.Size(64, 18);
-            this.DataDoLabel.TabIndex = 4;
-            this.DataDoLabel.Text = "Data do:";
-            // 
-            // DataOdLabel
-            // 
-            this.DataOdLabel.AutoSize = true;
-            this.DataOdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DataOdLabel.Location = new System.Drawing.Point(6, 91);
-            this.DataOdLabel.Name = "DataOdLabel";
-            this.DataOdLabel.Size = new System.Drawing.Size(64, 18);
-            this.DataOdLabel.TabIndex = 5;
-            this.DataOdLabel.Text = "Data od:";
-            // 
-            // DataOddateTimePicker
-            // 
-            this.DataOddateTimePicker.Location = new System.Drawing.Point(118, 87);
-            this.DataOddateTimePicker.Name = "DataOddateTimePicker";
-            this.DataOddateTimePicker.Size = new System.Drawing.Size(200, 22);
-            this.DataOddateTimePicker.TabIndex = 6;
-            // 
-            // DataDodateTimePicker
-            // 
-            this.DataDodateTimePicker.Location = new System.Drawing.Point(118, 115);
-            this.DataDodateTimePicker.Name = "DataDodateTimePicker";
-            this.DataDodateTimePicker.Size = new System.Drawing.Size(200, 22);
-            this.DataDodateTimePicker.TabIndex = 7;
-            // 
-            // ProgramLicencjeLabel
-            // 
-            this.ProgramLicencjeLabel.AutoSize = true;
-            this.ProgramLicencjeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ProgramLicencjeLabel.Location = new System.Drawing.Point(6, 149);
-            this.ProgramLicencjeLabel.Name = "ProgramLicencjeLabel";
-            this.ProgramLicencjeLabel.Size = new System.Drawing.Size(66, 18);
-            this.ProgramLicencjeLabel.TabIndex = 9;
-            this.ProgramLicencjeLabel.Text = "Program";
-            // 
-            // IloscLicencjeLabel
-            // 
-            this.IloscLicencjeLabel.AutoSize = true;
-            this.IloscLicencjeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.IloscLicencjeLabel.Location = new System.Drawing.Point(6, 177);
-            this.IloscLicencjeLabel.Name = "IloscLicencjeLabel";
-            this.IloscLicencjeLabel.Size = new System.Drawing.Size(39, 18);
-            this.IloscLicencjeLabel.TabIndex = 8;
-            this.IloscLicencjeLabel.Text = "Ilość";
-            // 
-            // CenaLicencjeLabel
-            // 
-            this.CenaLicencjeLabel.AutoSize = true;
-            this.CenaLicencjeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CenaLicencjeLabel.Location = new System.Drawing.Point(6, 205);
-            this.CenaLicencjeLabel.Name = "CenaLicencjeLabel";
-            this.CenaLicencjeLabel.Size = new System.Drawing.Size(43, 18);
-            this.CenaLicencjeLabel.TabIndex = 10;
-            this.CenaLicencjeLabel.Text = "Cena";
-            // 
-            // programBindingSource1
-            // 
-            this.programBindingSource1.DataMember = "Program";
-            this.programBindingSource1.DataSource = this.licencjeDataSet;
-            // 
-            // programComboBox1
-            // 
-            this.programComboBox1.DataSource = this.programBindingSource1;
-            this.programComboBox1.DisplayMember = "Nazwa";
-            this.programComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.programComboBox1.FormattingEnabled = true;
-            this.programComboBox1.Location = new System.Drawing.Point(118, 143);
-            this.programComboBox1.Name = "programComboBox1";
-            this.programComboBox1.Size = new System.Drawing.Size(200, 24);
-            this.programComboBox1.TabIndex = 10;
-            this.programComboBox1.ValueMember = "ID";
-            // 
-            // IloscLicencjinumericUpDown
-            // 
-            this.IloscLicencjinumericUpDown.Location = new System.Drawing.Point(118, 173);
-            this.IloscLicencjinumericUpDown.Maximum = new decimal(new int[] {
-            1215752192,
-            23,
-            0,
-            0});
-            this.IloscLicencjinumericUpDown.Name = "IloscLicencjinumericUpDown";
-            this.IloscLicencjinumericUpDown.Size = new System.Drawing.Size(200, 22);
-            this.IloscLicencjinumericUpDown.TabIndex = 11;
-            // 
-            // CenaLicencjinumericUpDown2
-            // 
-            this.CenaLicencjinumericUpDown2.DecimalPlaces = 2;
-            this.CenaLicencjinumericUpDown2.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.CenaLicencjinumericUpDown2.Location = new System.Drawing.Point(118, 201);
-            this.CenaLicencjinumericUpDown2.Maximum = new decimal(new int[] {
-            1215752192,
-            23,
-            0,
-            0});
-            this.CenaLicencjinumericUpDown2.Name = "CenaLicencjinumericUpDown2";
-            this.CenaLicencjinumericUpDown2.Size = new System.Drawing.Size(200, 22);
-            this.CenaLicencjinumericUpDown2.TabIndex = 12;
-            // 
             // PozycjetabPage
             // 
             this.PozycjetabPage.AutoScroll = true;
@@ -594,26 +612,49 @@
             this.PozycjetabPage.Text = "Pozycje";
             this.PozycjetabPage.UseVisualStyleBackColor = true;
             // 
-            // firmyBindingSource
+            // DodajPozycjeButton
             // 
-            this.firmyBindingSource.DataMember = "Firmy";
-            this.firmyBindingSource.DataSource = this.licencjeDataSet;
+            this.DodajPozycjeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DodajPozycjeButton.Location = new System.Drawing.Point(327, 323);
+            this.DodajPozycjeButton.Name = "DodajPozycjeButton";
+            this.DodajPozycjeButton.Size = new System.Drawing.Size(83, 30);
+            this.DodajPozycjeButton.TabIndex = 13;
+            this.DodajPozycjeButton.Text = "Dodaj";
+            this.DodajPozycjeButton.UseVisualStyleBackColor = true;
             // 
-            // firmyTableAdapter
+            // firmyPozycjeComboBox1
             // 
-            this.firmyTableAdapter.ClearBeforeFill = true;
+            this.firmyPozycjeComboBox1.DataSource = this.firmyBindingSource1;
+            this.firmyPozycjeComboBox1.DisplayMember = "NAZWA";
+            this.firmyPozycjeComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.firmyPozycjeComboBox1.FormattingEnabled = true;
+            this.firmyPozycjeComboBox1.Location = new System.Drawing.Point(135, 27);
+            this.firmyPozycjeComboBox1.Name = "firmyPozycjeComboBox1";
+            this.firmyPozycjeComboBox1.Size = new System.Drawing.Size(218, 24);
+            this.firmyPozycjeComboBox1.TabIndex = 4;
+            this.firmyPozycjeComboBox1.ValueMember = "ID";
             // 
-            // firmyLicencjeComboBox
+            // firmyBindingSource1
             // 
-            this.firmyLicencjeComboBox.DataSource = this.firmyBindingSource;
-            this.firmyLicencjeComboBox.DisplayMember = "NAZWA";
-            this.firmyLicencjeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.firmyLicencjeComboBox.FormattingEnabled = true;
-            this.firmyLicencjeComboBox.Location = new System.Drawing.Point(118, 27);
-            this.firmyLicencjeComboBox.Name = "firmyLicencjeComboBox";
-            this.firmyLicencjeComboBox.Size = new System.Drawing.Size(200, 24);
-            this.firmyLicencjeComboBox.TabIndex = 13;
-            this.firmyLicencjeComboBox.ValueMember = "ID";
+            this.firmyBindingSource1.DataMember = "Firmy";
+            this.firmyBindingSource1.DataSource = this.licencjeDataSet;
+            // 
+            // modulyComboBox
+            // 
+            this.modulyComboBox.DataSource = this.modulyBindingSource;
+            this.modulyComboBox.DisplayMember = "Nazwa";
+            this.modulyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.modulyComboBox.FormattingEnabled = true;
+            this.modulyComboBox.Location = new System.Drawing.Point(135, 57);
+            this.modulyComboBox.Name = "modulyComboBox";
+            this.modulyComboBox.Size = new System.Drawing.Size(218, 24);
+            this.modulyComboBox.TabIndex = 4;
+            this.modulyComboBox.ValueMember = "ID";
+            // 
+            // modulyBindingSource
+            // 
+            this.modulyBindingSource.DataMember = "Moduly";
+            this.modulyBindingSource.DataSource = this.licencjeDataSet;
             // 
             // ModulPozycjaLabel
             // 
@@ -635,69 +676,50 @@
             this.FirmaPozycjeLabel.TabIndex = 3;
             this.FirmaPozycjeLabel.Text = "Firma";
             // 
-            // modulyBindingSource
+            // programTableAdapter
             // 
-            this.modulyBindingSource.DataMember = "Moduly";
-            this.modulyBindingSource.DataSource = this.licencjeDataSet;
+            this.programTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FirmyTableAdapter = null;
+            this.tableAdapterManager.LicencjaTableAdapter = null;
+            this.tableAdapterManager.ModulyTableAdapter = null;
+            this.tableAdapterManager.PozycjaTableAdapter = null;
+            this.tableAdapterManager.ProgramTableAdapter = this.programTableAdapter;
+            this.tableAdapterManager.UpdateOrder = LicencjeApp.LicencjeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // firmyTableAdapter
+            // 
+            this.firmyTableAdapter.ClearBeforeFill = true;
             // 
             // modulyTableAdapter
             // 
             this.modulyTableAdapter.ClearBeforeFill = true;
             // 
-            // modulyComboBox
+            // statusStrip1
             // 
-            this.modulyComboBox.DataSource = this.modulyBindingSource;
-            this.modulyComboBox.DisplayMember = "Nazwa";
-            this.modulyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.modulyComboBox.FormattingEnabled = true;
-            this.modulyComboBox.Location = new System.Drawing.Point(135, 57);
-            this.modulyComboBox.Name = "modulyComboBox";
-            this.modulyComboBox.Size = new System.Drawing.Size(218, 24);
-            this.modulyComboBox.TabIndex = 4;
-            this.modulyComboBox.ValueMember = "ID";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SprawdzPoloczenietoolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 385);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(426, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // firmyBindingSource1
+            // SprawdzPoloczenietoolStripStatusLabel
             // 
-            this.firmyBindingSource1.DataMember = "Firmy";
-            this.firmyBindingSource1.DataSource = this.licencjeDataSet;
-            // 
-            // firmyPozycjeComboBox1
-            // 
-            this.firmyPozycjeComboBox1.DataSource = this.firmyBindingSource1;
-            this.firmyPozycjeComboBox1.DisplayMember = "NAZWA";
-            this.firmyPozycjeComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.firmyPozycjeComboBox1.FormattingEnabled = true;
-            this.firmyPozycjeComboBox1.Location = new System.Drawing.Point(135, 27);
-            this.firmyPozycjeComboBox1.Name = "firmyPozycjeComboBox1";
-            this.firmyPozycjeComboBox1.Size = new System.Drawing.Size(218, 24);
-            this.firmyPozycjeComboBox1.TabIndex = 4;
-            this.firmyPozycjeComboBox1.ValueMember = "ID";
-            // 
-            // DodajLicencjeButton
-            // 
-            this.DodajLicencjeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DodajLicencjeButton.Location = new System.Drawing.Point(327, 323);
-            this.DodajLicencjeButton.Name = "DodajLicencjeButton";
-            this.DodajLicencjeButton.Size = new System.Drawing.Size(83, 30);
-            this.DodajLicencjeButton.TabIndex = 14;
-            this.DodajLicencjeButton.Text = "Dodaj";
-            this.DodajLicencjeButton.UseVisualStyleBackColor = true;
-            // 
-            // DodajPozycjeButton
-            // 
-            this.DodajPozycjeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DodajPozycjeButton.Location = new System.Drawing.Point(327, 323);
-            this.DodajPozycjeButton.Name = "DodajPozycjeButton";
-            this.DodajPozycjeButton.Size = new System.Drawing.Size(83, 30);
-            this.DodajPozycjeButton.TabIndex = 13;
-            this.DodajPozycjeButton.Text = "Dodaj";
-            this.DodajPozycjeButton.UseVisualStyleBackColor = true;
+            this.SprawdzPoloczenietoolStripStatusLabel.Name = "SprawdzPoloczenietoolStripStatusLabel";
+            this.SprawdzPoloczenietoolStripStatusLabel.Size = new System.Drawing.Size(110, 17);
+            this.SprawdzPoloczenietoolStripStatusLabel.Text = "Sprawdź połączenie";
             // 
             // EdycjaBazDanychForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 390);
+            this.ClientSize = new System.Drawing.Size(426, 407);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.EdycjaBazyTabControl);
             this.Name = "EdycjaBazDanychForm";
             this.Text = "Dodaj dane do bazy danych";
@@ -713,15 +735,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
             this.LicencjeTabPage.ResumeLayout(false);
             this.LicencjeTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IloscLicencjinumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CenaLicencjinumericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IloscLicencjinumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource1)).EndInit();
             this.PozycjetabPage.ResumeLayout(false);
             this.PozycjetabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modulyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modulyBindingSource)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -786,5 +811,7 @@
         private System.Windows.Forms.ComboBox modulyComboBox;
         private System.Windows.Forms.Button DodajLicencjeButton;
         private System.Windows.Forms.Button DodajPozycjeButton;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel SprawdzPoloczenietoolStripStatusLabel;
     }
 }
