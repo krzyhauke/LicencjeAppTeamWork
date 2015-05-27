@@ -76,7 +76,7 @@ namespace LicencjeApp
             this.pozycjaTableAdapter.Fill(this.licencjeDataSet.Pozycja);
             TabelaDataGridView.DataSource = licencjeDataSet.Pozycja;
             TabelaDataGridView.DataSource = pozycjaBindingSource;
-            PasekBindingNavigator.BindingSource = licencjaBindingSource;
+            PasekBindingNavigator.BindingSource = pozycjaBindingSource;
             WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Pozycje";
         }
 
@@ -98,5 +98,37 @@ namespace LicencjeApp
             EdycjaBazDanychForm EdycjaBazDanychForm = new EdycjaBazDanychForm();
             EdycjaBazDanychForm.Show();
         }
+
+        private void RefreshStripButton1_Click(object sender, EventArgs e)
+        {
+            if (TabelaDataGridView.DataSource == firmyBindingSource)
+            {
+                this.firmyTableAdapter.Fill(this.licencjeDataSet.Firmy);
+                TabelaDataGridView.DataSource = firmyBindingSource;
+            }
+            else if (TabelaDataGridView.DataSource == licencjaBindingSource)
+            {
+                this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
+                TabelaDataGridView.DataSource = licencjaBindingSource;
+            }
+            else if (TabelaDataGridView.DataSource == modulyBindingSource)
+            {
+                this.modulyTableAdapter.Fill(this.licencjeDataSet.Moduly);
+                TabelaDataGridView.DataSource = modulyBindingSource;
+            }
+            else if (TabelaDataGridView.DataSource == pozycjaBindingSource)
+            {
+                this.pozycjaTableAdapter.Fill(this.licencjeDataSet.Pozycja);
+                TabelaDataGridView.DataSource = pozycjaBindingSource;
+            }
+            else if (TabelaDataGridView.DataSource==programBindingSource)
+            {
+                this.programTableAdapter.Fill(this.licencjeDataSet.Program);
+                TabelaDataGridView.DataSource = programBindingSource;
+            }
+            
+        }
+
+  
     }
 }
