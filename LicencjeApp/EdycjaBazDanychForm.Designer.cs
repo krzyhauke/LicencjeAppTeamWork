@@ -494,7 +494,7 @@
             this.programComboBox1.DisplayMember = "Nazwa";
             this.programComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.programComboBox1.FormattingEnabled = true;
-            this.programComboBox1.Location = new System.Drawing.Point(118, 143);
+            this.programComboBox1.Location = new System.Drawing.Point(118, 57);
             this.programComboBox1.Name = "programComboBox1";
             this.programComboBox1.Size = new System.Drawing.Size(200, 24);
             this.programComboBox1.TabIndex = 10;
@@ -519,7 +519,7 @@
             // 
             this.ProgramLicencjeLabel.AutoSize = true;
             this.ProgramLicencjeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ProgramLicencjeLabel.Location = new System.Drawing.Point(6, 149);
+            this.ProgramLicencjeLabel.Location = new System.Drawing.Point(6, 63);
             this.ProgramLicencjeLabel.Name = "ProgramLicencjeLabel";
             this.ProgramLicencjeLabel.Size = new System.Drawing.Size(66, 18);
             this.ProgramLicencjeLabel.TabIndex = 9;
@@ -537,14 +537,14 @@
             // 
             // DataDodateTimePicker
             // 
-            this.DataDodateTimePicker.Location = new System.Drawing.Point(118, 115);
+            this.DataDodateTimePicker.Location = new System.Drawing.Point(118, 145);
             this.DataDodateTimePicker.Name = "DataDodateTimePicker";
             this.DataDodateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.DataDodateTimePicker.TabIndex = 7;
             // 
             // DataOddateTimePicker
             // 
-            this.DataOddateTimePicker.Location = new System.Drawing.Point(118, 87);
+            this.DataOddateTimePicker.Location = new System.Drawing.Point(118, 117);
             this.DataOddateTimePicker.Name = "DataOddateTimePicker";
             this.DataOddateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.DataOddateTimePicker.TabIndex = 6;
@@ -553,7 +553,7 @@
             // 
             this.DataOdLabel.AutoSize = true;
             this.DataOdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DataOdLabel.Location = new System.Drawing.Point(6, 91);
+            this.DataOdLabel.Location = new System.Drawing.Point(6, 121);
             this.DataOdLabel.Name = "DataOdLabel";
             this.DataOdLabel.Size = new System.Drawing.Size(64, 18);
             this.DataOdLabel.TabIndex = 5;
@@ -563,7 +563,7 @@
             // 
             this.DataDoLabel.AutoSize = true;
             this.DataDoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DataDoLabel.Location = new System.Drawing.Point(6, 119);
+            this.DataDoLabel.Location = new System.Drawing.Point(6, 149);
             this.DataDoLabel.Name = "DataDoLabel";
             this.DataDoLabel.Size = new System.Drawing.Size(64, 18);
             this.DataDoLabel.TabIndex = 4;
@@ -572,7 +572,7 @@
             // NumerLicencjiTextBox
             // 
             this.NumerLicencjiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumerLicencjiTextBox.Location = new System.Drawing.Point(118, 57);
+            this.NumerLicencjiTextBox.Location = new System.Drawing.Point(118, 87);
             this.NumerLicencjiTextBox.Name = "NumerLicencjiTextBox";
             this.NumerLicencjiTextBox.Size = new System.Drawing.Size(200, 24);
             this.NumerLicencjiTextBox.TabIndex = 3;
@@ -581,7 +581,7 @@
             // 
             this.NumerLicencjiLabel.AutoSize = true;
             this.NumerLicencjiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumerLicencjiLabel.Location = new System.Drawing.Point(6, 63);
+            this.NumerLicencjiLabel.Location = new System.Drawing.Point(6, 93);
             this.NumerLicencjiLabel.Name = "NumerLicencjiLabel";
             this.NumerLicencjiLabel.Size = new System.Drawing.Size(106, 18);
             this.NumerLicencjiLabel.TabIndex = 2;
@@ -622,6 +622,7 @@
             this.DodajPozycjeButton.TabIndex = 13;
             this.DodajPozycjeButton.Text = "Dodaj";
             this.DodajPozycjeButton.UseVisualStyleBackColor = true;
+            this.DodajPozycjeButton.Click += new System.EventHandler(this.DodajPozycjeButton_Click);
             // 
             // firmyPozycjeComboBox1
             // 
