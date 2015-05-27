@@ -425,7 +425,7 @@
             this.LicencjeTabPage.Location = new System.Drawing.Point(4, 25);
             this.LicencjeTabPage.Name = "LicencjeTabPage";
             this.LicencjeTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.LicencjeTabPage.Size = new System.Drawing.Size(418, 361);
+            this.LicencjeTabPage.Size = new System.Drawing.Size(418, 378);
             this.LicencjeTabPage.TabIndex = 3;
             this.LicencjeTabPage.Text = "Licencje";
             this.LicencjeTabPage.UseVisualStyleBackColor = true;
@@ -439,6 +439,7 @@
             this.DodajLicencjeButton.TabIndex = 14;
             this.DodajLicencjeButton.Text = "Dodaj";
             this.DodajLicencjeButton.UseVisualStyleBackColor = true;
+            this.DodajLicencjeButton.Click += new System.EventHandler(this.DodajLicencjeButton_Click);
             // 
             // firmyLicencjeComboBox
             // 
@@ -607,7 +608,7 @@
             this.PozycjetabPage.Location = new System.Drawing.Point(4, 25);
             this.PozycjetabPage.Name = "PozycjetabPage";
             this.PozycjetabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.PozycjetabPage.Size = new System.Drawing.Size(418, 361);
+            this.PozycjetabPage.Size = new System.Drawing.Size(418, 378);
             this.PozycjetabPage.TabIndex = 4;
             this.PozycjetabPage.Text = "Pozycje";
             this.PozycjetabPage.UseVisualStyleBackColor = true;

@@ -97,7 +97,30 @@ namespace LicencjeApp
             {
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "INSERT INTO Program (KOD, Nazwa, ID_PROGRAMU) VALUES ('" + KodModulyTextBox.Text + "','" + NazwaModulyTextBox.Text + "','" + programComboBox.SelectedValue.ToString() + "');";
+                cmd.CommandText = "INSERT INTO Moduly (KOD, Nazwa, ID_PROGRAMU) VALUES ('" + KodModulyTextBox.Text + "','" + NazwaModulyTextBox.Text + "','" + programComboBox.SelectedValue.ToString() + "');";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = connection;
+
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void DodajLicencjeButton_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                
+
+                SqlCommand cmd = new SqlCommand();
+            //    cmd.CommandText = "INSERT INTO Licencja (ID_FIRMY, NUMER_LICENCJI, DATA_OD, DATA_DO, Ilosc, Cena, ID_PROGRAMU) VALUES ('"firm
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = connection;
 
