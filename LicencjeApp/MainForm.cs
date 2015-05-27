@@ -83,7 +83,13 @@ namespace LicencjeApp
         private void TabelaDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
+            string nazwaFirmy = TabelaDataGridView.Rows[row].Cells[1].Value.ToString();
+            string idFirmy = TabelaDataGridView.Rows[row].Cells[0].Value.ToString();
 
+            NrLicencjiForm licencjaform = new NrLicencjiForm();
+
+            licencjaform.PobierzDane(nazwaFirmy,idFirmy);
+            licencjaform.Show();
 
         }
 
