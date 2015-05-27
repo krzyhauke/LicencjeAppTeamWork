@@ -38,7 +38,7 @@
             this.modulyTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ModulyTableAdapter();
             this.pozycjaTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.PozycjaTableAdapter();
             this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
-            this.firmyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.PasekBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -51,14 +51,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.firmyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.firmyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabelaDataGridView = new System.Windows.Forms.DataGridView();
             this.licencjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.modulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pozycjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,9 +66,9 @@
             this.pozycjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.firmyBindingNavigator)).BeginInit();
-            this.firmyBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firmyDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasekBindingNavigator)).BeginInit();
+            this.PasekBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabelaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modulyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pozycjaBindingSource)).BeginInit();
@@ -122,13 +115,12 @@
             // 
             this.programTableAdapter.ClearBeforeFill = true;
             // 
-            // firmyBindingNavigator
+            // PasekBindingNavigator
             // 
-            this.firmyBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.firmyBindingNavigator.BindingSource = this.firmyBindingSource;
-            this.firmyBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.firmyBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.firmyBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.PasekBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.PasekBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.PasekBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.PasekBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -143,16 +135,16 @@
             this.firmyBindingNavigatorSaveItem,
             this.UstawieniaToolStripDropDownButton,
             this.WybierzBazeDanychToolStripDropDownButton});
-            this.firmyBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.firmyBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.firmyBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.firmyBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.firmyBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.firmyBindingNavigator.Name = "firmyBindingNavigator";
-            this.firmyBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.firmyBindingNavigator.Size = new System.Drawing.Size(746, 25);
-            this.firmyBindingNavigator.TabIndex = 0;
-            this.firmyBindingNavigator.Text = "bindingNavigator1";
+            this.PasekBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.PasekBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.PasekBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.PasekBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.PasekBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.PasekBindingNavigator.Name = "PasekBindingNavigator";
+            this.PasekBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.PasekBindingNavigator.Size = new System.Drawing.Size(746, 25);
+            this.PasekBindingNavigator.TabIndex = 0;
+            this.PasekBindingNavigator.Text = "Witam Serdecznie";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -248,66 +240,13 @@
             this.firmyBindingNavigatorSaveItem.Text = "Save Data";
             this.firmyBindingNavigatorSaveItem.Click += new System.EventHandler(this.firmyBindingNavigatorSaveItem_Click);
             // 
-            // firmyDataGridView
+            // TabelaDataGridView
             // 
-            this.firmyDataGridView.AutoGenerateColumns = false;
-            this.firmyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.firmyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.firmyDataGridView.DataSource = this.firmyBindingSource;
-            this.firmyDataGridView.Location = new System.Drawing.Point(0, 28);
-            this.firmyDataGridView.Name = "firmyDataGridView";
-            this.firmyDataGridView.Size = new System.Drawing.Size(744, 392);
-            this.firmyDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NAZWA";
-            this.dataGridViewTextBoxColumn2.HeaderText = "NAZWA";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NIP";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NIP";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ADRES";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ADRES";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Miejscowosc";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Miejscowosc";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "email";
-            this.dataGridViewTextBoxColumn6.HeaderText = "email";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "telefon";
-            this.dataGridViewTextBoxColumn7.HeaderText = "telefon";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.TabelaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabelaDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.TabelaDataGridView.Name = "TabelaDataGridView";
+            this.TabelaDataGridView.Size = new System.Drawing.Size(744, 392);
+            this.TabelaDataGridView.TabIndex = 1;
             // 
             // licencjaBindingSource
             // 
@@ -359,55 +298,60 @@
             this.WybierzBazeDanychToolStripDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("WybierzBazeDanychToolStripDropDownButton.Image")));
             this.WybierzBazeDanychToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.WybierzBazeDanychToolStripDropDownButton.Name = "WybierzBazeDanychToolStripDropDownButton";
-            this.WybierzBazeDanychToolStripDropDownButton.Size = new System.Drawing.Size(131, 22);
-            this.WybierzBazeDanychToolStripDropDownButton.Text = "Wybierz bazę danych";
+            this.WybierzBazeDanychToolStripDropDownButton.Size = new System.Drawing.Size(122, 22);
+            this.WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Firma";
             // 
             // firmyToolStripMenuItem
             // 
             this.firmyToolStripMenuItem.Name = "firmyToolStripMenuItem";
             this.firmyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.firmyToolStripMenuItem.Text = "Firmy";
+            this.firmyToolStripMenuItem.Click += new System.EventHandler(this.firmyToolStripMenuItem_Click);
             // 
             // programyToolStripMenuItem
             // 
             this.programyToolStripMenuItem.Name = "programyToolStripMenuItem";
             this.programyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.programyToolStripMenuItem.Text = "Programy";
+            this.programyToolStripMenuItem.Click += new System.EventHandler(this.programyToolStripMenuItem_Click);
             // 
             // modułyToolStripMenuItem
             // 
             this.modułyToolStripMenuItem.Name = "modułyToolStripMenuItem";
             this.modułyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.modułyToolStripMenuItem.Text = "Moduły";
+            this.modułyToolStripMenuItem.Click += new System.EventHandler(this.modułyToolStripMenuItem_Click);
             // 
             // licencjeToolStripMenuItem
             // 
             this.licencjeToolStripMenuItem.Name = "licencjeToolStripMenuItem";
             this.licencjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.licencjeToolStripMenuItem.Text = "Licencje";
+            this.licencjeToolStripMenuItem.Click += new System.EventHandler(this.licencjeToolStripMenuItem_Click);
             // 
             // pozycjeToolStripMenuItem
             // 
             this.pozycjeToolStripMenuItem.Name = "pozycjeToolStripMenuItem";
             this.pozycjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pozycjeToolStripMenuItem.Text = "Pozycje";
+            this.pozycjeToolStripMenuItem.Click += new System.EventHandler(this.pozycjeToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 535);
-            this.Controls.Add(this.firmyDataGridView);
-            this.Controls.Add(this.firmyBindingNavigator);
+            this.Controls.Add(this.TabelaDataGridView);
+            this.Controls.Add(this.PasekBindingNavigator);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.firmyBindingNavigator)).EndInit();
-            this.firmyBindingNavigator.ResumeLayout(false);
-            this.firmyBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firmyDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasekBindingNavigator)).EndInit();
+            this.PasekBindingNavigator.ResumeLayout(false);
+            this.PasekBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabelaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modulyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pozycjaBindingSource)).EndInit();
@@ -423,7 +367,7 @@
         private System.Windows.Forms.BindingSource firmyBindingSource;
         private LicencjeDataSetTableAdapters.FirmyTableAdapter firmyTableAdapter;
         private LicencjeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator firmyBindingNavigator;
+        private System.Windows.Forms.BindingNavigator PasekBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -436,14 +380,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton firmyBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView firmyDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridView TabelaDataGridView;
         private LicencjeDataSetTableAdapters.LicencjaTableAdapter licencjaTableAdapter;
         private System.Windows.Forms.BindingSource licencjaBindingSource;
         private LicencjeDataSetTableAdapters.ModulyTableAdapter modulyTableAdapter;

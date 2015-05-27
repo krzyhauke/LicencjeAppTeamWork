@@ -27,17 +27,57 @@ namespace LicencjeApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
-            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Pozycja' table. You can move, or remove it, as needed.
-            this.pozycjaTableAdapter.Fill(this.licencjeDataSet.Pozycja);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Moduly' table. You can move, or remove it, as needed.
-            this.modulyTableAdapter.Fill(this.licencjeDataSet.Moduly);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
-            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Firmy' table. You can move, or remove it, as needed.
-            this.firmyTableAdapter.Fill(this.licencjeDataSet.Firmy);
 
+            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
+            this.pozycjaTableAdapter.Fill(this.licencjeDataSet.Pozycja);
+            this.modulyTableAdapter.Fill(this.licencjeDataSet.Moduly);
+            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
+            this.firmyTableAdapter.Fill(this.licencjeDataSet.Firmy);
+            TabelaDataGridView.DataSource = firmyBindingSource;
+            PasekBindingNavigator.BindingSource = firmyBindingSource;
+            WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Firmy";
+        }
+
+        private void firmyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.firmyTableAdapter.Fill(this.licencjeDataSet.Firmy);
+            TabelaDataGridView.DataSource = firmyBindingSource;
+            PasekBindingNavigator.BindingSource = firmyBindingSource;
+            WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Firmy";
+        }
+
+        private void programyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.programTableAdapter.Fill(this.licencjeDataSet.Program);
+            TabelaDataGridView.DataSource = programBindingSource;
+            PasekBindingNavigator.BindingSource = programBindingSource;
+            WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Programy";
+
+        }
+
+        private void modułyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.modulyTableAdapter.Fill(this.licencjeDataSet.Moduly);
+            TabelaDataGridView.DataSource = modulyBindingSource;
+            PasekBindingNavigator.BindingSource = modulyBindingSource;
+            WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Moduły";
+        }
+
+        private void licencjeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
+            TabelaDataGridView.DataSource = modulyBindingSource;
+            PasekBindingNavigator.BindingSource = licencjaBindingSource;
+            WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Licencje";
+        }
+
+        private void pozycjeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.pozycjaTableAdapter.Fill(this.licencjeDataSet.Pozycja);
+            TabelaDataGridView.DataSource = licencjeDataSet.Pozycja;
+            TabelaDataGridView.DataSource = pozycjaBindingSource;
+            PasekBindingNavigator.BindingSource = licencjaBindingSource;
+            WybierzBazeDanychToolStripDropDownButton.Text = "Baza danych: Pozycje";
         }
     }
 }
