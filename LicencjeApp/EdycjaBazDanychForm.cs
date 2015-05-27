@@ -120,8 +120,29 @@ namespace LicencjeApp
                 
 
                 SqlCommand cmd = new SqlCommand();
-            //    cmd.CommandText = "INSERT INTO Licencja (ID_FIRMY, NUMER_LICENCJI, DATA_OD, DATA_DO, Ilosc, Cena, ID_PROGRAMU) VALUES ('"firm
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO Licencja (ID_FIRMY, NUMER_LICENCJI, DATA_OD, DATA_DO, Ilosc, Cena, ID_PROGRAMU) VALUES ('"+firmyLicencjeComboBox.SelectedValue+"','"+NumerLicencjiTextBox.Text+"','"+DataOddateTimePicker.Value+"','"+DataDodateTimePicker.Value+"','"+IloscLicencjinumericUpDown.Value.ToString()+"','"+CenaLicencjinumericUpDown2.Value.ToString()+"','"+programComboBox.SelectedValue+"')";                cmd.CommandType = CommandType.Text;
+                cmd.Connection = connection;
+
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void DodajPozycjeButton_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "INSERT INTO Pozycja (ID_Firmy, ID_Modulu) VALUES ('" + firmyPozycjeComboBox1.SelectedValue + "','" + modulyComboBox.SelectedValue + "')"; cmd.CommandType = CommandType.Text;
                 cmd.Connection = connection;
 
                 try
