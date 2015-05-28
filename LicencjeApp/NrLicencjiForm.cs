@@ -68,7 +68,8 @@ namespace LicencjeApp
         }
 
         private void PDFButton_Click(object sender, EventArgs e)
-        {/*
+        {
+            PobranieNazwyIIdProgramu();
             SaveFileDialog savefiledialog = new SaveFileDialog();
             savefiledialog.DefaultExt = "pdf";
 
@@ -88,12 +89,12 @@ namespace LicencjeApp
 
                 doc.Add(FirmaiTEXT);
 
-               Paragraph LicencjaiTEXT = new Paragraph("\n\n Licencja: " + LicencjeListBox.Text, FontFactory.GetFont("Verdana", 12));
+               Paragraph LicencjaiTEXT = new Paragraph("\n\n Licencja: " + nUMER_LICENCJIListBox.Text, FontFactory.GetFont("Verdana", 12));
                 LicencjaiTEXT.Alignment = Element.ALIGN_JUSTIFIED;
 
                 doc.Add(LicencjaiTEXT);
 
-                Paragraph programiTEXT = new Paragraph("\n\n" + programyListBox.Text, FontFactory.GetFont("Verdana", 10));
+                Paragraph programiTEXT = new Paragraph("\n\n" + NazwaProgramu, FontFactory.GetFont("Verdana", 10));
                 programiTEXT.Alignment = Element.ALIGN_RIGHT;
 
                 doc.Add(programiTEXT);
@@ -102,7 +103,7 @@ namespace LicencjeApp
 
                 MessageBox.Show("Plik Został Zapisany");
             }
-            */
+            
 
         }
 
@@ -155,13 +156,19 @@ namespace LicencjeApp
             }
             nUMER_LICENCJIListBox.DataSource = ListaLicencji;
 
+            PobranieNazwyIIdProgramu();
+
+
+
+
+
+        }
+
+        private void PobranieNazwyIIdProgramu()
+        {
             int row = Convert.ToInt32(programDataGridView.CurrentRow.Index);
             idProgramu = programDataGridView.Rows[row].Cells[0].Value.ToString();
-
-
-
-
-
+            NazwaProgramu = programDataGridView.Rows[row].Cells[1].Value.ToString();
         }
 
     }
