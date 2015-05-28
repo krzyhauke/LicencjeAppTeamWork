@@ -185,6 +185,7 @@
             this.programDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.programDataGridView.EnableHeadersVisualStyles = false;
             this.programDataGridView.Location = new System.Drawing.Point(17, 61);
+            this.programDataGridView.MultiSelect = false;
             this.programDataGridView.Name = "programDataGridView";
             this.programDataGridView.ReadOnly = true;
             this.programDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;

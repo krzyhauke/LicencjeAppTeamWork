@@ -142,7 +142,7 @@
             this.PasekBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.PasekBindingNavigator.Name = "PasekBindingNavigator";
             this.PasekBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.PasekBindingNavigator.Size = new System.Drawing.Size(746, 25);
+            this.PasekBindingNavigator.Size = new System.Drawing.Size(894, 25);
             this.PasekBindingNavigator.TabIndex = 0;
             this.PasekBindingNavigator.Text = "Witam Serdecznie";
             // 
@@ -311,12 +311,18 @@
             // 
             // TabelaDataGridView
             // 
+            this.TabelaDataGridView.AllowUserToAddRows = false;
+            this.TabelaDataGridView.AllowUserToResizeColumns = false;
+            this.TabelaDataGridView.AllowUserToResizeRows = false;
+            this.TabelaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TabelaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabelaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabelaDataGridView.EnableHeadersVisualStyles = false;
             this.TabelaDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.TabelaDataGridView.MultiSelect = false;
             this.TabelaDataGridView.Name = "TabelaDataGridView";
             this.TabelaDataGridView.ReadOnly = true;
-            this.TabelaDataGridView.Size = new System.Drawing.Size(746, 510);
+            this.TabelaDataGridView.Size = new System.Drawing.Size(894, 510);
             this.TabelaDataGridView.TabIndex = 1;
             this.TabelaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaDataGridView_CellDoubleClick);
             // 
@@ -344,7 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 535);
+            this.ClientSize = new System.Drawing.Size(894, 535);
             this.Controls.Add(this.TabelaDataGridView);
             this.Controls.Add(this.PasekBindingNavigator);
             this.Name = "MainForm";

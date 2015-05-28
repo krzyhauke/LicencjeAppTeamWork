@@ -46,26 +46,10 @@ namespace LicencjeApp
         public void NrLicencjiForm_Load(object sender, EventArgs e)
         {
 
-            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
             this.programTableAdapter.Fill(this.licencjeDataSet.Program);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
             this.programTableAdapter.Fill(this.licencjeDataSet.Program);
 
-            /*string connstr = @"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
-            string query = "SELECT Nazwa" +
-                           " FROM Program as tprog" +
-                           " LEFT OUTER JOIN" +
-                           " Licencja AS Lic ON tprog.ID = lic.ID_PROGRAMU WHERE tprog.ID = lic.ID_PROGRAMU ";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, connstr);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            BindingSource pbs = new BindingSource();
-            pbs.DataSource = table;
-            ProgramyListBox.DataSource = pbs;
-
-            ProgramyListBox.DisplayMember = "Nazwa";
-          pbs.Filter = "SELECT * FROM Program INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU";*/
-        }
+           }
 
         private void PDFButton_Click(object sender, EventArgs e)
         {
@@ -107,31 +91,6 @@ namespace LicencjeApp
 
         }
 
-        private void programListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-            List<String> ListaLicencji = new List<String>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = @"SELECT NUMER_LICENCJI FROM LICENCJA WHERE ID_FIRMY='" + Convert.ToInt32(IDLabel.Text) + "' AND ID_PROGRAMU ='"+idProgramu+"'";
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    conn.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string NumerLicencjiX = reader["NUMER_LICENCJI"].ToString();
-                            ListaLicencji.Add(NumerLicencjiX);
-                        }
-                    }
-
-                }
-            }
-            nUMER_LICENCJIListBox.DataSource = ListaLicencji;
-        }
 
         private void programDataGridView_Click(object sender, EventArgs e)
         {

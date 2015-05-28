@@ -142,7 +142,8 @@ namespace LicencjeApp
                 
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "INSERT INTO Licencja (ID_FIRMY, NUMER_LICENCJI, DATA_OD, DATA_DO, Ilosc, Cena, ID_PROGRAMU) VALUES ('"+firmyLicencjeComboBox.SelectedValue+"','"+NumerLicencjiTextBox.Text+"','"+DataOddateTimePicker.Value+"','"+DataDodateTimePicker.Value+"','"+IloscLicencjinumericUpDown.Value.ToString()+"','"+CenaLicencjinumericUpDown2.Value.ToString()+"','"+programComboBox.SelectedValue+"')";                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO Licencja (ID_FIRMY, NUMER_LICENCJI, DATA_OD, DATA_DO, Ilosc, Cena, ID_PROGRAMU) VALUES ('"+firmyLicencjeComboBox.SelectedValue+"','"+NumerLicencjiTextBox.Text+"','"+DataOddateTimePicker.Value+"','"+DataDodateTimePicker.Value+"','"+IloscLicencjinumericUpDown.Value.ToString()+"','"+CenaLicencjinumericUpDown2.Value.ToString()+"','"+programComboBox1.SelectedValue+"')";                
+                cmd.CommandType = CommandType.Text;
                 cmd.Connection = connection;
 
                 try
@@ -159,12 +160,12 @@ namespace LicencjeApp
                 }
             }
             firmyLicencjeComboBox.SelectedIndex = 0;
+            programComboBox1.SelectedIndex = 0;
             NumerLicencjiTextBox.Text = null;
             DataOddateTimePicker.Value = DateTime.Today;
             DataDodateTimePicker.Value = DateTime.Today;
             IloscLicencjinumericUpDown.Value = 1;
             CenaLicencjinumericUpDown2.Value = 0;
-            programComboBox1.SelectedIndex = 0;
         }
 
         private void DodajPozycjeButton_Click(object sender, EventArgs e)
