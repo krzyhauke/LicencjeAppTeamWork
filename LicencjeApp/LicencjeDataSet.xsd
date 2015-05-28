@@ -363,7 +363,7 @@ INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU
   <xs:element name="LicencjeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LicencjeDataSet" msprop:Generator_UserDSName="LicencjeDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Firmy" msprop:Generator_TableClassName="FirmyDataTable" msprop:Generator_TableVarName="tableFirmy" msprop:Generator_TablePropName="Firmy" msprop:Generator_RowDeletingName="FirmyRowDeleting" msprop:Generator_RowChangingName="FirmyRowChanging" msprop:Generator_RowEvHandlerName="FirmyRowChangeEventHandler" msprop:Generator_RowDeletedName="FirmyRowDeleted" msprop:Generator_UserTableName="Firmy" msprop:Generator_RowChangedName="FirmyRowChanged" msprop:Generator_RowEvArgName="FirmyRowChangeEvent" msprop:Generator_RowClassName="FirmyRow">
+        <xs:element name="Firmy" msprop:Generator_TableClassName="FirmyDataTable" msprop:Generator_TableVarName="tableFirmy" msprop:Generator_RowChangedName="FirmyRowChanged" msprop:Generator_TablePropName="Firmy" msprop:Generator_RowDeletingName="FirmyRowDeleting" msprop:Generator_RowChangingName="FirmyRowChanging" msprop:Generator_RowEvHandlerName="FirmyRowChangeEventHandler" msprop:Generator_RowDeletedName="FirmyRowDeleted" msprop:Generator_RowClassName="FirmyRow" msprop:Generator_UserTableName="Firmy" msprop:Generator_RowEvArgName="FirmyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -412,7 +412,7 @@ INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Licencja" msprop:Generator_TableClassName="LicencjaDataTable" msprop:Generator_TableVarName="tableLicencja" msprop:Generator_TablePropName="Licencja" msprop:Generator_RowDeletingName="LicencjaRowDeleting" msprop:Generator_RowChangingName="LicencjaRowChanging" msprop:Generator_RowEvHandlerName="LicencjaRowChangeEventHandler" msprop:Generator_RowDeletedName="LicencjaRowDeleted" msprop:Generator_UserTableName="Licencja" msprop:Generator_RowChangedName="LicencjaRowChanged" msprop:Generator_RowEvArgName="LicencjaRowChangeEvent" msprop:Generator_RowClassName="LicencjaRow">
+        <xs:element name="Licencja" msprop:Generator_TableClassName="LicencjaDataTable" msprop:Generator_TableVarName="tableLicencja" msprop:Generator_RowChangedName="LicencjaRowChanged" msprop:Generator_TablePropName="Licencja" msprop:Generator_RowDeletingName="LicencjaRowDeleting" msprop:Generator_RowChangingName="LicencjaRowChanging" msprop:Generator_RowEvHandlerName="LicencjaRowChangeEventHandler" msprop:Generator_RowDeletedName="LicencjaRowDeleted" msprop:Generator_RowClassName="LicencjaRow" msprop:Generator_UserTableName="Licencja" msprop:Generator_RowEvArgName="LicencjaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -432,7 +432,7 @@ INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Moduly" msprop:Generator_TableClassName="ModulyDataTable" msprop:Generator_TableVarName="tableModuly" msprop:Generator_TablePropName="Moduly" msprop:Generator_RowDeletingName="ModulyRowDeleting" msprop:Generator_RowChangingName="ModulyRowChanging" msprop:Generator_RowEvHandlerName="ModulyRowChangeEventHandler" msprop:Generator_RowDeletedName="ModulyRowDeleted" msprop:Generator_UserTableName="Moduly" msprop:Generator_RowChangedName="ModulyRowChanged" msprop:Generator_RowEvArgName="ModulyRowChangeEvent" msprop:Generator_RowClassName="ModulyRow">
+        <xs:element name="Moduly" msprop:Generator_TableClassName="ModulyDataTable" msprop:Generator_TableVarName="tableModuly" msprop:Generator_RowChangedName="ModulyRowChanged" msprop:Generator_TablePropName="Moduly" msprop:Generator_RowDeletingName="ModulyRowDeleting" msprop:Generator_RowChangingName="ModulyRowChanging" msprop:Generator_RowEvHandlerName="ModulyRowChangeEventHandler" msprop:Generator_RowDeletedName="ModulyRowDeleted" msprop:Generator_RowClassName="ModulyRow" msprop:Generator_UserTableName="Moduly" msprop:Generator_RowEvArgName="ModulyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -460,7 +460,7 @@ INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Pozycja" msprop:Generator_TableClassName="PozycjaDataTable" msprop:Generator_TableVarName="tablePozycja" msprop:Generator_TablePropName="Pozycja" msprop:Generator_RowDeletingName="PozycjaRowDeleting" msprop:Generator_RowChangingName="PozycjaRowChanging" msprop:Generator_RowEvHandlerName="PozycjaRowChangeEventHandler" msprop:Generator_RowDeletedName="PozycjaRowDeleted" msprop:Generator_UserTableName="Pozycja" msprop:Generator_RowChangedName="PozycjaRowChanged" msprop:Generator_RowEvArgName="PozycjaRowChangeEvent" msprop:Generator_RowClassName="PozycjaRow">
+        <xs:element name="Pozycja" msprop:Generator_TableClassName="PozycjaDataTable" msprop:Generator_TableVarName="tablePozycja" msprop:Generator_RowChangedName="PozycjaRowChanged" msprop:Generator_TablePropName="Pozycja" msprop:Generator_RowDeletingName="PozycjaRowDeleting" msprop:Generator_RowChangingName="PozycjaRowChanging" msprop:Generator_RowEvHandlerName="PozycjaRowChangeEventHandler" msprop:Generator_RowDeletedName="PozycjaRowDeleted" msprop:Generator_RowClassName="PozycjaRow" msprop:Generator_UserTableName="Pozycja" msprop:Generator_RowEvArgName="PozycjaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -469,7 +469,7 @@ INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Program" msprop:Generator_TableClassName="ProgramDataTable" msprop:Generator_TableVarName="tableProgram" msprop:Generator_TablePropName="Program" msprop:Generator_RowDeletingName="ProgramRowDeleting" msprop:Generator_RowChangingName="ProgramRowChanging" msprop:Generator_RowEvHandlerName="ProgramRowChangeEventHandler" msprop:Generator_RowDeletedName="ProgramRowDeleted" msprop:Generator_UserTableName="Program" msprop:Generator_RowChangedName="ProgramRowChanged" msprop:Generator_RowEvArgName="ProgramRowChangeEvent" msprop:Generator_RowClassName="ProgramRow">
+        <xs:element name="Program" msprop:Generator_TableClassName="ProgramDataTable" msprop:Generator_TableVarName="tableProgram" msprop:Generator_RowChangedName="ProgramRowChanged" msprop:Generator_TablePropName="Program" msprop:Generator_RowDeletingName="ProgramRowDeleting" msprop:Generator_RowChangingName="ProgramRowChanging" msprop:Generator_RowEvHandlerName="ProgramRowChangeEventHandler" msprop:Generator_RowDeletedName="ProgramRowDeleted" msprop:Generator_RowClassName="ProgramRow" msprop:Generator_UserTableName="Program" msprop:Generator_RowEvArgName="ProgramRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -506,4 +506,10 @@ INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Licencja_Firmy" msdata:parent="Licencja" msdata:child="Firmy" msdata:parentkey="ID_FIRMY" msdata:childkey="ID" msprop:Generator_UserChildTable="Firmy" msprop:Generator_ChildPropName="GetFirmyRows" msprop:Generator_UserRelationName="Licencja_Firmy" msprop:Generator_RelationVarName="relationLicencja_Firmy" msprop:Generator_UserParentTable="Licencja" msprop:Generator_ParentPropName="LicencjaRow" />
+      <msdata:Relationship name="Program_Licencja" msdata:parent="Program" msdata:child="Licencja" msdata:parentkey="ID" msdata:childkey="ID_PROGRAMU" msprop:Generator_UserChildTable="Licencja" msprop:Generator_ChildPropName="GetLicencjaRows" msprop:Generator_UserRelationName="Program_Licencja" msprop:Generator_RelationVarName="relationProgram_Licencja" msprop:Generator_UserParentTable="Program" msprop:Generator_ParentPropName="ProgramRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

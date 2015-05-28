@@ -16,8 +16,14 @@ using System.IO;
 
 namespace LicencjeApp
 {
+
     public partial class NrLicencjiForm : Form
     {
+        public string connectionString = "Data Source=78.10.88.200,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
+        public string idProgramu;
+        public string NazwaProgramu;
+        
+
         public NrLicencjiForm()
         {
             InitializeComponent();
@@ -28,7 +34,7 @@ namespace LicencjeApp
             IDLabel.Text = idfirmy;
             FirmaLabel.Text = nazwafirmy;
 
-            
+
         }
 
         private void AnulujButton_Click(object sender, EventArgs e)
@@ -39,12 +45,13 @@ namespace LicencjeApp
 
         public void NrLicencjiForm_Load(object sender, EventArgs e)
         {
+
             // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
             this.programTableAdapter.Fill(this.licencjeDataSet.Program);
             // TODO: This line of code loads data into the 'licencjeDataSet.Program' table. You can move, or remove it, as needed.
             this.programTableAdapter.Fill(this.licencjeDataSet.Program);
 
-           /* string connstr = @"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
+            /*string connstr = @"Data Source=192.168.1.10,49352;Initial Catalog=SprawdzanieLicencjiPraktykanci;Persist Security Info=True;User ID=sa;Password=dr5DR%ft6FT^";
             string query = "SELECT Nazwa" +
                            " FROM Program as tprog" +
                            " LEFT OUTER JOIN" +
@@ -58,37 +65,10 @@ namespace LicencjeApp
 
             ProgramyListBox.DisplayMember = "Nazwa";
           pbs.Filter = "SELECT * FROM Program INNER JOIN Licencja ON Program.ID = Licencja.ID_PROGRAMU";*/
-
-
-
-            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
-            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
-            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
-            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
-            // TODO: This line of code loads data into the 'licencjeDataSet.Licencja' table. You can move, or remove it, as needed.
-            this.licencjaTableAdapter.Fill(this.licencjeDataSet.Licencja);
-
-             
-            
         }
-
-        private void LicencjeListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-
-        private void licencjaBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            licencjaBindingSource.Filter = "ID_FIRMY =" + IDLabel.Text;
-        }
-
-       
 
         private void PDFButton_Click(object sender, EventArgs e)
-        {
+        {/*
             SaveFileDialog savefiledialog = new SaveFileDialog();
             savefiledialog.DefaultExt = "pdf";
 
@@ -108,12 +88,12 @@ namespace LicencjeApp
 
                 doc.Add(FirmaiTEXT);
 
-                Paragraph LicencjaiTEXT = new Paragraph("\n\n Licencja: " + LicencjeListBox.Text, FontFactory.GetFont("Verdana", 12));
+               Paragraph LicencjaiTEXT = new Paragraph("\n\n Licencja: " + LicencjeListBox.Text, FontFactory.GetFont("Verdana", 12));
                 LicencjaiTEXT.Alignment = Element.ALIGN_JUSTIFIED;
 
                 doc.Add(LicencjaiTEXT);
 
-                Paragraph programiTEXT = new Paragraph("\n\n" + ProgramyListBox.Text, FontFactory.GetFont("Verdana", 10));
+                Paragraph programiTEXT = new Paragraph("\n\n" + programyListBox.Text, FontFactory.GetFont("Verdana", 10));
                 programiTEXT.Alignment = Element.ALIGN_RIGHT;
 
                 doc.Add(programiTEXT);
@@ -122,15 +102,65 @@ namespace LicencjeApp
 
                 MessageBox.Show("Plik Został Zapisany");
             }
-
+            */
 
         }
 
-      
-
-       
-        private void ProgramyListBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void programListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+
+            List<String> ListaLicencji = new List<String>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT NUMER_LICENCJI FROM LICENCJA WHERE ID_FIRMY='" + Convert.ToInt32(IDLabel.Text) + "' AND ID_PROGRAMU ='"+idProgramu+"'";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string NumerLicencjiX = reader["NUMER_LICENCJI"].ToString();
+                            ListaLicencji.Add(NumerLicencjiX);
+                        }
+                    }
+
+                }
+            }
+            nUMER_LICENCJIListBox.DataSource = ListaLicencji;
+        }
+
+        private void programDataGridView_Click(object sender, EventArgs e)
+        {
+            List<String> ListaLicencji = new List<String>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT NUMER_LICENCJI FROM LICENCJA WHERE ID_FIRMY='" + Convert.ToInt32(IDLabel.Text) + "' AND ID_PROGRAMU ='" + idProgramu + "'";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string NumerLicencjiX = reader["NUMER_LICENCJI"].ToString();
+                            ListaLicencji.Add(NumerLicencjiX);
+                        }
+                    }
+
+                }
+            }
+            nUMER_LICENCJIListBox.DataSource = ListaLicencji;
+
+            int row = Convert.ToInt32(programDataGridView.CurrentRow.Index);
+            idProgramu = programDataGridView.Rows[row].Cells[0].Value.ToString();
+
+
+
+
 
         }
 

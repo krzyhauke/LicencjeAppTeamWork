@@ -60,7 +60,7 @@ namespace LicencjeApp
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    MessageBox.Show("Powiadomienie", "Dodano rekord do bazy danych", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Dodano rekord do bazy danych", "Powiadomienie", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

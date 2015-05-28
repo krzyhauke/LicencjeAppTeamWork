@@ -315,6 +315,7 @@
             this.TabelaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabelaDataGridView.Location = new System.Drawing.Point(0, 25);
             this.TabelaDataGridView.Name = "TabelaDataGridView";
+            this.TabelaDataGridView.ReadOnly = true;
             this.TabelaDataGridView.Size = new System.Drawing.Size(746, 510);
             this.TabelaDataGridView.TabIndex = 1;
             this.TabelaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaDataGridView_CellDoubleClick);

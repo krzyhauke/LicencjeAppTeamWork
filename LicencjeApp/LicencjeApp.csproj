@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Licencja.cs" />
     <Compile Include="LicencjeDataSet.cs">
       <DependentUpon>LicencjeDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>

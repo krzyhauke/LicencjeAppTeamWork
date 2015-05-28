@@ -32,11 +32,9 @@
             this.AnulujButton = new System.Windows.Forms.Button();
             this.PDFButton = new System.Windows.Forms.Button();
             this.FirmaLabel = new System.Windows.Forms.Label();
-            this.ProgramyListBox = new System.Windows.Forms.ListBox();
             this.licencjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licencjeDataSet = new LicencjeApp.LicencjeDataSet();
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.LicencjeListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,15 +42,21 @@
             this.licencjaTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.LicencjaTableAdapter();
             this.licencjeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programTableAdapter = new LicencjeApp.LicencjeDataSetTableAdapters.ProgramTableAdapter();
+            this.tableAdapterManager = new LicencjeApp.LicencjeDataSetTableAdapters.TableAdapterManager();
+            this.nUMER_LICENCJIListBox = new System.Windows.Forms.ListBox();
+            this.programDataGridView = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.licencjaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // AnulujButton
             // 
-            this.AnulujButton.Location = new System.Drawing.Point(13, 227);
+            this.AnulujButton.Location = new System.Drawing.Point(17, 292);
             this.AnulujButton.Name = "AnulujButton";
             this.AnulujButton.Size = new System.Drawing.Size(75, 23);
             this.AnulujButton.TabIndex = 0;
@@ -62,7 +66,7 @@
             // 
             // PDFButton
             // 
-            this.PDFButton.Location = new System.Drawing.Point(194, 227);
+            this.PDFButton.Location = new System.Drawing.Point(443, 292);
             this.PDFButton.Name = "PDFButton";
             this.PDFButton.Size = new System.Drawing.Size(75, 23);
             this.PDFButton.TabIndex = 1;
@@ -80,24 +84,11 @@
             this.FirmaLabel.TabIndex = 2;
             this.FirmaLabel.Text = "cos";
             // 
-            // ProgramyListBox
-            // 
-            this.ProgramyListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.licencjaBindingSource, "ID_PROGRAMU", true));
-            this.ProgramyListBox.DataSource = this.programBindingSource;
-            this.ProgramyListBox.DisplayMember = "Nazwa";
-            this.ProgramyListBox.FormattingEnabled = true;
-            this.ProgramyListBox.Location = new System.Drawing.Point(17, 57);
-            this.ProgramyListBox.Name = "ProgramyListBox";
-            this.ProgramyListBox.Size = new System.Drawing.Size(81, 160);
-            this.ProgramyListBox.TabIndex = 3;
-            this.ProgramyListBox.SelectedIndexChanged += new System.EventHandler(this.ProgramyListBox_SelectedIndexChanged_1);
-            // 
             // licencjaBindingSource
             // 
             this.licencjaBindingSource.DataMember = "Licencja";
             this.licencjaBindingSource.DataSource = this.licencjeDataSet;
             this.licencjaBindingSource.Filter = "";
-            this.licencjaBindingSource.CurrentChanged += new System.EventHandler(this.licencjaBindingSource_CurrentChanged);
             // 
             // licencjeDataSet
             // 
@@ -108,18 +99,6 @@
             // 
             this.programBindingSource.DataMember = "Program";
             this.programBindingSource.DataSource = this.licencjeDataSet;
-            // 
-            // LicencjeListBox
-            // 
-            this.LicencjeListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.programBindingSource, "ID", true));
-            this.LicencjeListBox.DataSource = this.licencjaBindingSource;
-            this.LicencjeListBox.DisplayMember = "NUMER_LICENCJI";
-            this.LicencjeListBox.FormattingEnabled = true;
-            this.LicencjeListBox.Location = new System.Drawing.Point(120, 57);
-            this.LicencjeListBox.Name = "LicencjeListBox";
-            this.LicencjeListBox.Size = new System.Drawing.Size(149, 160);
-            this.LicencjeListBox.TabIndex = 4;
-            this.LicencjeListBox.SelectedIndexChanged += new System.EventHandler(this.LicencjeListBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -133,7 +112,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(117, 41);
+            this.label2.Location = new System.Drawing.Point(181, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 6;
@@ -170,17 +149,78 @@
             // 
             this.programTableAdapter.ClearBeforeFill = true;
             // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FirmyTableAdapter = null;
+            this.tableAdapterManager.LicencjaTableAdapter = this.licencjaTableAdapter;
+            this.tableAdapterManager.ModulyTableAdapter = null;
+            this.tableAdapterManager.PozycjaTableAdapter = null;
+            this.tableAdapterManager.ProgramTableAdapter = this.programTableAdapter;
+            this.tableAdapterManager.UpdateOrder = LicencjeApp.LicencjeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // nUMER_LICENCJIListBox
+            // 
+            this.nUMER_LICENCJIListBox.FormattingEnabled = true;
+            this.nUMER_LICENCJIListBox.Location = new System.Drawing.Point(184, 61);
+            this.nUMER_LICENCJIListBox.Name = "nUMER_LICENCJIListBox";
+            this.nUMER_LICENCJIListBox.Size = new System.Drawing.Size(334, 225);
+            this.nUMER_LICENCJIListBox.TabIndex = 9;
+            // 
+            // programDataGridView
+            // 
+            this.programDataGridView.AllowUserToResizeColumns = false;
+            this.programDataGridView.AllowUserToResizeRows = false;
+            this.programDataGridView.AutoGenerateColumns = false;
+            this.programDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.programDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.programDataGridView.ColumnHeadersHeight = 33;
+            this.programDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.programDataGridView.ColumnHeadersVisible = false;
+            this.programDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nazwa});
+            this.programDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.programDataGridView.DataSource = this.programBindingSource;
+            this.programDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.programDataGridView.EnableHeadersVisualStyles = false;
+            this.programDataGridView.Location = new System.Drawing.Point(17, 61);
+            this.programDataGridView.Name = "programDataGridView";
+            this.programDataGridView.ReadOnly = true;
+            this.programDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.programDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.programDataGridView.RowHeadersVisible = false;
+            this.programDataGridView.Size = new System.Drawing.Size(152, 225);
+            this.programDataGridView.TabIndex = 10;
+            this.programDataGridView.Click += new System.EventHandler(this.programDataGridView_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Nazwa
+            // 
+            this.Nazwa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nazwa.DataPropertyName = "Nazwa";
+            this.Nazwa.HeaderText = "Nazwa";
+            this.Nazwa.Name = "Nazwa";
+            this.Nazwa.ReadOnly = true;
+            // 
             // NrLicencjiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 270);
+            this.ClientSize = new System.Drawing.Size(541, 325);
+            this.Controls.Add(this.programDataGridView);
+            this.Controls.Add(this.nUMER_LICENCJIListBox);
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.LicencjeListBox);
-            this.Controls.Add(this.ProgramyListBox);
             this.Controls.Add(this.FirmaLabel);
             this.Controls.Add(this.PDFButton);
             this.Controls.Add(this.AnulujButton);
@@ -191,6 +231,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencjeDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,8 +242,6 @@
         private System.Windows.Forms.Button AnulujButton;
         private System.Windows.Forms.Button PDFButton;
         private System.Windows.Forms.Label FirmaLabel;
-        private System.Windows.Forms.ListBox ProgramyListBox;
-        private System.Windows.Forms.ListBox LicencjeListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -213,5 +252,10 @@
         private System.Windows.Forms.BindingSource licencjeDataSetBindingSource;
         private System.Windows.Forms.BindingSource programBindingSource;
         private LicencjeDataSetTableAdapters.ProgramTableAdapter programTableAdapter;
+        private LicencjeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ListBox nUMER_LICENCJIListBox;
+        private System.Windows.Forms.DataGridView programDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa;
     }
 }
