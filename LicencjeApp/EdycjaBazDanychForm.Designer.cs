@@ -65,7 +65,6 @@
             this.CenaLicencjinumericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.IloscLicencjinumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.programComboBox1 = new System.Windows.Forms.ComboBox();
-            this.programBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.CenaLicencjeLabel = new System.Windows.Forms.Label();
             this.ProgramLicencjeLabel = new System.Windows.Forms.Label();
             this.IloscLicencjeLabel = new System.Windows.Forms.Label();
@@ -79,7 +78,6 @@
             this.PozycjetabPage = new System.Windows.Forms.TabPage();
             this.DodajPozycjeButton = new System.Windows.Forms.Button();
             this.firmyPozycjeComboBox1 = new System.Windows.Forms.ComboBox();
-            this.firmyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.modulyComboBox = new System.Windows.Forms.ComboBox();
             this.modulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ModulPozycjaLabel = new System.Windows.Forms.Label();
@@ -100,9 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CenaLicencjinumericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IloscLicencjinumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource1)).BeginInit();
             this.PozycjetabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modulyBindingSource)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -490,7 +486,7 @@
             // 
             // programComboBox1
             // 
-            this.programComboBox1.DataSource = this.programBindingSource1;
+            this.programComboBox1.DataSource = this.programBindingSource;
             this.programComboBox1.DisplayMember = "Nazwa";
             this.programComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.programComboBox1.FormattingEnabled = true;
@@ -499,11 +495,6 @@
             this.programComboBox1.Size = new System.Drawing.Size(200, 24);
             this.programComboBox1.TabIndex = 10;
             this.programComboBox1.ValueMember = "ID";
-            // 
-            // programBindingSource1
-            // 
-            this.programBindingSource1.DataMember = "Program";
-            this.programBindingSource1.DataSource = this.licencjeDataSet;
             // 
             // CenaLicencjeLabel
             // 
@@ -626,7 +617,7 @@
             // 
             // firmyPozycjeComboBox1
             // 
-            this.firmyPozycjeComboBox1.DataSource = this.firmyBindingSource1;
+            this.firmyPozycjeComboBox1.DataSource = this.firmyBindingSource;
             this.firmyPozycjeComboBox1.DisplayMember = "NAZWA";
             this.firmyPozycjeComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.firmyPozycjeComboBox1.FormattingEnabled = true;
@@ -635,11 +626,6 @@
             this.firmyPozycjeComboBox1.Size = new System.Drawing.Size(218, 24);
             this.firmyPozycjeComboBox1.TabIndex = 4;
             this.firmyPozycjeComboBox1.ValueMember = "ID";
-            // 
-            // firmyBindingSource1
-            // 
-            this.firmyBindingSource1.DataMember = "Firmy";
-            this.firmyBindingSource1.DataSource = this.licencjeDataSet;
             // 
             // modulyComboBox
             // 
@@ -662,7 +648,7 @@
             // 
             this.ModulPozycjaLabel.AutoSize = true;
             this.ModulPozycjaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ModulPozycjaLabel.Location = new System.Drawing.Point(3, 63);
+            this.ModulPozycjaLabel.Location = new System.Drawing.Point(6, 63);
             this.ModulPozycjaLabel.Name = "ModulPozycjaLabel";
             this.ModulPozycjaLabel.Size = new System.Drawing.Size(49, 18);
             this.ModulPozycjaLabel.TabIndex = 4;
@@ -740,10 +726,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CenaLicencjinumericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IloscLicencjinumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource1)).EndInit();
             this.PozycjetabPage.ResumeLayout(false);
             this.PozycjetabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firmyBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modulyBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -797,7 +781,6 @@
         private System.Windows.Forms.Label DataDoLabel;
         private System.Windows.Forms.Label CenaLicencjeLabel;
         private System.Windows.Forms.ComboBox programComboBox1;
-        private System.Windows.Forms.BindingSource programBindingSource1;
         private System.Windows.Forms.NumericUpDown CenaLicencjinumericUpDown2;
         private System.Windows.Forms.NumericUpDown IloscLicencjinumericUpDown;
         private System.Windows.Forms.TabPage PozycjetabPage;
@@ -809,7 +792,6 @@
         private System.Windows.Forms.BindingSource modulyBindingSource;
         private LicencjeDataSetTableAdapters.ModulyTableAdapter modulyTableAdapter;
         private System.Windows.Forms.ComboBox firmyPozycjeComboBox1;
-        private System.Windows.Forms.BindingSource firmyBindingSource1;
         private System.Windows.Forms.ComboBox modulyComboBox;
         private System.Windows.Forms.Button DodajLicencjeButton;
         private System.Windows.Forms.Button DodajPozycjeButton;

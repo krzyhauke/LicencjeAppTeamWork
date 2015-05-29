@@ -73,6 +73,9 @@ namespace LicencjeApp
             MiejscowoscFirmyTextBox.Text = null;
             EmailFirmyTextBox.Text = null;
             telefonTextBox.Text = null;
+            this.firmyTableAdapter.Fill(this.licencjeDataSet.Firmy);
+            firmyPozycjeComboBox1.DataSource = firmyBindingSource;
+            firmyLicencjeComboBox.DataSource = firmyBindingSource;
 
             
 
@@ -105,6 +108,9 @@ namespace LicencjeApp
                 }
             }
             NazwaProgramyTextBox.Text = null;
+            this.programTableAdapter.Fill(licencjeDataSet.Program);
+            programComboBox.DataSource = programBindingSource;
+            programComboBox1.DataSource = programBindingSource;
         }
 
         private void DodajModulButton_Click(object sender, EventArgs e)
@@ -133,6 +139,8 @@ namespace LicencjeApp
             KodModulyTextBox.Text = null;
             NazwaModulyTextBox.Text = null;
             programComboBox.SelectedIndex = 0;
+            this.modulyTableAdapter.Fill(licencjeDataSet.Moduly);
+            modulyComboBox.DataSource = modulyBindingSource;
         }
 
         private void DodajLicencjeButton_Click(object sender, EventArgs e)
